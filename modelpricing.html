@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join EXA Models - Travel, Shoot, and Catwalk runways across the world.">
+    <title>Model Pricing | EXA Models</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a0033, #2d1b69, #000033);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .exa-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .exa-header {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+
+        .exa-logo {
+            max-width: 150px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
+        }
+
+        .exa-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00ffff, #ff00ff, #9400d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(255, 182, 193, 0.5);
+            line-height: 1.2;
+            padding: 5px 0;
+        }
+
+        .exa-subtitle {
+            font-size: 1.2rem;
+            color: #e6e6fa;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            line-height: 1.6;
+        }
+
+        .exa-packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .exa-package-card {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.15), rgba(0, 191, 255, 0.15), rgba(255, 105, 180, 0.15));
+            border: 2px solid #ff1493;
+            border-radius: 25px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .exa-package-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #00bfff;
+            box-shadow: 0 20px 50px rgba(0, 191, 255, 0.4);
+        }
+
+        .exa-package-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exa-package-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(147, 112, 219, 0.6);
+        }
+
+        .exa-package-description {
+            font-size: 1rem;
+            color: #e6e6fa;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .exa-pricing {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exa-monthly-price {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .exa-features {
+            margin-bottom: 35px;
+        }
+
+        .exa-feature-category {
+            margin-bottom: 20px;
+        }
+
+        .exa-feature-category h4 {
+            color: #ff69b4;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .exa-feature-list {
+            list-style: none;
+        }
+
+        .exa-feature-list li {
+            color: #e6e6fa;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .exa-feature-list li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            color: #00bfff;
+        }
+
+        .exa-cta-button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff, #9400d3);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .exa-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 191, 255, 0.5);
+            background: linear-gradient(135deg, #00e6e6, #ff66ff, #ba55d3);
+        }
+
+        .exa-cta-button.annual {
+            background: linear-gradient(135deg, #32cd32, #00ff7f) !important;
+        }
+
+        .exa-cta-button.annual:hover {
+            background: linear-gradient(135deg, #2eb82e, #00e673) !important;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+            white-space: nowrap;
+        }
+
+        .badge-fire {
+            background: linear-gradient(135deg, #ff4500, #ff6347);
+            color: white;
+        }
+
+        .badge-exclusive {
+            background: linear-gradient(135deg, #dc143c, #b22222);
+            color: white;
+        }
+
+        .exa-footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 182, 193, 0.3);
+        }
+
+        .exa-swim-icon {
+            max-width: 60px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.7));
+        }
+
+        .exa-footer p {
+            color: #e6e6fa;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .exa-contact-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.8), rgba(0, 191, 255, 0.8));
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 182, 193, 0.5);
+        }
+
+        .exa-contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .exa-packages-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .exa-package-card {
+                padding: 30px 20px;
+            }
+
+            .exa-title {
+                font-size: 2.5rem;
+            }
+
+            .exa-subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+
+            .exa-monthly-price {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="exa-container">
+        <div class="exa-header">
+            <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=1500w" alt="EXA Models Logo" class="exa-logo" loading="lazy">
+            <h1 class="exa-title">Swim Models</h1>
+            <p class="exa-subtitle">Join us for unforgettable experiences as we Travel, Shoot, and Catwalk runways across the world.</p>
+        </div>
+
+        <div class="exa-packages-grid">
+            <!-- Luxe Package -->
+            <div class="exa-package-card">
+                <div class="exa-package-header">
+                    <h3 class="exa-package-name">Luxe</h3>
+                    <div class="badge badge-fire">
+                        🔥 ONLY 8 SPOTS REMAINING
+                    </div>
+                    <p class="exa-package-description">Take your modeling career to the next level with personalized management, runway coaching, and photoshoot training designed to sharpen your skills and get you runway-ready for Miami Swim Week.</p>
+                </div>
+                <div class="exa-pricing">
+                    <div class="exa-monthly-price">$350<span style="font-size: 1rem; color: #e6e6fa;">/month</span></div>
+                </div>
+                <div class="exa-features">
+                    <div class="exa-feature-category">
+                        <h4>All Included:</h4>
+                        <ul class="exa-feature-list">
+                            <li>EXA Profile + Link in Bio examodels.com/yourname</li>
+                            <li>Personal Manager via Call/Text</li>
+                            <li>Runway & Training Workshops</li>
+                            <li>Access to Photographers (photographer rates can apply)</li>
+                            <li>Personal Brand Development</li>
+                        </ul>
+                    </div>
+                    <div class="exa-feature-category">
+                        <h4>Runway Shows</h4>
+                        <ul class="exa-feature-list">
+                            <li>Walk in Miami Swim Week Show</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="exa-cta-button" onclick="window.open('https://buy.stripe.com/28E9AU99I8F93QZcZC0Fi1o', '_blank')">Select $350 Month</button>
+                <button class="exa-cta-button annual" onclick="window.open('https://buy.stripe.com/dRm5kE85EdZtgDL2kY0Fi1r', '_blank')">Select Annual Payment (Save 20%)</button>
+            </div>
+
+            <!-- Star Package -->
+            <div class="exa-package-card">
+                <div class="exa-package-header">
+                    <h3 class="exa-package-name">Star</h3>
+                    <div class="badge badge-exclusive">
+                        ⚡ EXCLUSIVE - ONLY 3 SPOTS LEFT
+                    </div>
+                    <p class="exa-package-description">The complete package for models ready to achieve stardom with monthly photoshoots, brand development, and elite fashion runway experiences.</p>
+                </div>
+                <div class="exa-pricing">
+                    <div class="exa-monthly-price">$900<span style="font-size: 1rem; color: #e6e6fa;">/month</span></div>
+                </div>
+                <div class="exa-features">
+                    <div class="exa-feature-category">
+                        <h4>All Included:</h4>
+                        <ul class="exa-feature-list">
+                            <li>EXA Profile + Link in Bio examodels.com/yourname</li>
+                            <li>Personal Manager via Call/Text</li>
+                            <li>Runway & Training Workshops</li>
+                            <li>Photoshoots</li>
+                            <li>Personal Brand Development</li>
+                        </ul>
+                    </div>
+                    <div class="exa-feature-category">
+                        <h4>Magazine</h4>
+                        <ul class="exa-feature-list">
+                            <li>Featured in SWIM Magazine</li>
+                        </ul>
+                    </div>
+                    <div class="exa-feature-category">
+                        <h4>Runway Shows</h4>
+                        <ul class="exa-feature-list">
+                            <li>Walk in All Shows, including:</li>
+                            <li>Miami Swim Week</li>
+                            <li>New York Fashion Week</li>
+                            <li>Miami Art Basel</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="exa-cta-button" onclick="window.open('https://buy.stripe.com/7sY14o99I08DgDL1gU0Fi1p', '_blank')">Select $900 Month</button>
+                <button class="exa-cta-button annual" onclick="window.open('https://buy.stripe.com/cNicN6gCaaNhdrzf7K0Fi1q', '_blank')">Select Annual Payment (Save 20%)</button>
+            </div>
+        </div>
+
+        <div class="exa-footer">
+            <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/d16a21b5-cbdd-4572-8339-59791386ab68/swim+icon.png?format=750w" alt="Swim Icon" class="exa-swim-icon" loading="lazy">
+            <p>Have questions about our packages?</p>
+            <a href="/" class="exa-contact-btn">Contact Us Today</a>
+        </div>
+    </div>
+</body>
+</html>
