@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover our talented models - EXA Models roster">
+    <title>Our Models | EXA Models</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            color: #E6E6FA;
+            background: linear-gradient(135deg, #1a0033, #2d1b69, #000033);
+            min-height: 100vh;
+            padding: 40px 20px;
+            text-shadow: 0 1px 2px rgba(148, 0, 211, 0.3);
+        }
+
+        .models-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.7));
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00ffff, #ff00ff, #9400d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(255, 182, 193, 0.5);
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: #e6e6fa;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #00BFFF, #FF69B4);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #FFFFFF;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+            background: linear-gradient(90deg, #FF69B4, #FF00FF);
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .model-card {
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(0, 191, 255, 0.2));
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(255, 105, 180, 0.6), 0 0 35px rgba(0, 191, 255, 0.5);
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .model-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 35px rgba(255, 105, 180, 0.8), 0 0 50px rgba(0, 191, 255, 0.7);
+        }
+
+        .model-logo {
+            font-size: 2rem;
+            color: #FF99CC;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .profile-image-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #FFFFFF;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+            margin: 0 auto 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .model-card:hover .profile-image-container {
+            transform: scale(1.05);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .model-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00BFFF;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .instagram-handle {
+            font-size: 1rem;
+            color: #FF69B4;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .view-profile-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, #00BFFF, #FF69B4);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid #FFFFFF;
+            margin-top: 10px;
+        }
+
+        .model-card:hover .view-profile-btn {
+            background: linear-gradient(90deg, #FF69B4, #FF00FF);
+            transform: scale(1.05);
+        }
+
+        .loading {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #00BFFF;
+            padding: 60px 20px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 182, 193, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #00bfff;
+            width: 50px;
+            height: 50px;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .page-subtitle {
+                font-size: 1rem;
+            }
+
+            .models-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .profile-image-container {
+                width: 160px;
+                height: 160px;
+            }
+
+            .model-name {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="models-container">
+        <div class="header">
+            <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=1500w"
+                 alt="EXA Models Logo"
+                 class="logo"
+                 loading="lazy">
+            <h1 class="page-title">Our Models</h1>
+            <p class="page-subtitle">
+                Discover the talented models in our roster. Each bringing their unique style and energy to runways worldwide.
+            </p>
+            <div>
+                <a href="/" class="cta-button">Apply to Join</a>
+                <a href="/modelpricing" class="cta-button">View Packages</a>
+            </div>
+        </div>
+
+        <div id="models-grid" class="models-grid">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Loading our amazing models...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load models from JSON
+        async function loadModels() {
+            try {
+                const response = await fetch('/models.json');
+                const models = await response.json();
+
+                const grid = document.getElementById('models-grid');
+
+                if (models && models.length > 0) {
+                    grid.innerHTML = models.map(model => `
+                        <a href="/${model.id}" class="model-card">
+                            <div class="model-logo">exa</div>
+
+                            <div class="profile-image-container">
+                                <img src="${model.photo}"
+                                     alt="${model.name} Profile"
+                                     class="profile-image"
+                                     loading="lazy">
+                            </div>
+
+                            <h2 class="model-name">${model.name}</h2>
+
+                            ${model.instagram ? `<div class="instagram-handle">${model.instagram}</div>` : ''}
+
+                            <span class="view-profile-btn">View Profile</span>
+                        </a>
+                    `).join('');
+                } else {
+                    grid.innerHTML = `
+                        <div class="loading">
+                            <p>No models found. Check back soon!</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading models:', error);
+                document.getElementById('models-grid').innerHTML = `
+                    <div class="loading">
+                        <p>Unable to load models. Please try again later.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Load models on page load
+        loadModels();
+    </script>
+</body>
+</html>
