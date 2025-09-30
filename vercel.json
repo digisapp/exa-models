@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
+    { "source": "/pricing", "destination": "/pricing.html" },
     { "source": "/designer", "destination": "/designer.html" },
     { "source": "/:model", "destination": "/model.html" }
   ]
