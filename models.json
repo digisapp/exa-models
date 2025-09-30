@@ -100,5 +100,42 @@
         "url": "https://venmo.com/u/Stephanie-Zustovich"
       }
     ]
+  },
+  {
+    "id": "aleksandrabryl",
+    "name": "Aleksandra Bryl",
+    "photo": "https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/0f1a56f2-78b1-4857-9ad5-9d2634197089/Screenshot+2024-10-07+at+10.40.41%E2%80%AFAM.jpg",
+    "instagram": "@aleksandrabryl5",
+    "stats": {
+      "height": "5'9\"",
+      "bust": "34",
+      "waist": "26.5",
+      "hips": "32.5",
+      "shoe": "8.5",
+      "hair": "Blonde",
+      "eyes": "Blue-Green"
+    },
+    "links": [
+      {
+        "title": "Instagram",
+        "url": "https://www.instagram.com/_carolinecook_"
+      },
+      {
+        "title": "TikTok",
+        "url": "https://www.tiktok.com/@ajbryl19"
+      },
+      {
+        "title": "Snapchat",
+        "url": "https://www.snapchat.com/add/abryl519"
+      },
+      {
+        "title": "VSCO",
+        "url": "https://vsco.co/aleksandrabryl5/gallery"
+      },
+      {
+        "title": "Edikted",
+        "url": "https://edikted.com/"
+      }
+    ]
   }
 ]
