@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore media coverage of Miami Swim Week featuring global swimwear brands and top models.">
+    <title>Media Coverage</title>
+    <!-- Preload critical font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Tokyo-Inspired Fashion Vibe */
+        :root {
+            --primary-color: #4B0082; /* Deep indigo for elegance */
+            --secondary-color: #00BFFF; /* Electric blue for vibrancy */
+            --accent-color: #FF69B4; /* Hot pink for energy */
+            --tertiary-color: #FF00FF; /* Magenta for pop */
+            --deep-accent: #9400D3; /* Dark violet for depth */
+            --white: #FFFFFF;
+            --text-light: #E6E6FA; /* Lavender white */
+            --box-shadow-primary: 0 0 25px rgba(255, 105, 180, 0.6), 0 0 35px rgba(0, 191, 255, 0.4);
+            --box-shadow-secondary: 0 4px 15px rgba(148, 0, 211, 0.25);
+            --border-radius-large: 20px;
+            --border-radius-medium: 15px;
+            --border-radius-small: 10px;
+            --transition-standard: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-light); /* Lavender white text for readability */
+            background: linear-gradient(135deg, #1a0033, #2d1b69, #000033); /* Deep purple to navy gradient */
+            overflow-x: hidden;
+            text-shadow: 0 1px 2px rgba(148, 0, 211, 0.3);
+            min-height: 100vh;
+        }
+
+        /* Model Form Embedded Styles */
+        .buttons-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 30px;
+            align-items: center;
+        }
+
+        .form-and-image-container {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .image-column {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .flyer-image,
+        .swim-shows-image {
+            max-width: 85%;
+            width: 85%;
+            height: auto;
+            border-radius: var(--border-radius-medium);
+            box-shadow: var(--box-shadow-secondary);
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .flyer-image:hover,
+        .swim-shows-image:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.5);
+        }
+
+        .image-column a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .embedded-model-form {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Desktop Buttons Container - Between Form and Instagram */
+        .desktop-buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .desktop-cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+            transition: var(--transition-standard);
+            text-align: center;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            color: var(--white);
+            box-shadow: var(--box-shadow-secondary);
+            border: 2px solid var(--white);
+            width: 100%;
+            height: 50px;
+            line-height: normal;
+        }
+
+        .desktop-cta-button:hover,
+        .desktop-cta-button:focus {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
+            background: linear-gradient(90deg, var(--accent-color), var(--tertiary-color));
+            color: var(--white);
+            border-color: var(--white);
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        /* Mobile Buttons Container */
+        .mobile-buttons-container {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+            align-items: center;
+        }
+        .mobile-model-form {
+            display: none;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        #mobile-model-form-container {
+            font-family: 'Poppins', sans-serif;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        #mobile-model-form-container .header-logo {
+            max-width: 120px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.7));
+        }
+
+        #mobile-model-form-container .form-container {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.9), rgba(0, 191, 255, 0.9), rgba(255, 105, 180, 0.9));
+            padding: 20px 25px 30px;
+            border-radius: 20px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(147, 112, 219, 0.5);
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #mobile-model-form-container .form-container:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M50 30 C 60 20, 70 20, 80 30 C 70 40, 60 40, 50 30 C 40 40, 30 40, 20 30 C 30 20, 40 20, 50 30 Z' fill='rgba(255,182,193,0.1)'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+            opacity: 0.2;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        #mobile-model-form-container h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            margin-top: 0;
+            font-size: 22px;
+            font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(147, 112, 219, 0.5);
+            position: relative;
+        }
+
+        #mobile-model-form-container .form-group {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        #mobile-model-form-container label {
+            display: block;
+            text-align: left;
+            font-size: 12px;
+            margin-bottom: 4px;
+            color: #e6e6fa;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        #mobile-model-form-container input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid rgba(255, 182, 193, 0.5);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+            background-color: rgba(255, 255, 255, 0.95);
+            height: 40px;
+            appearance: none;
+            -webkit-appearance: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #mobile-model-form-container input:focus {
+            outline: none;
+            border-color: #00bfff;
+            box-shadow: 0 0 12px rgba(0, 191, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        #mobile-model-form-container button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff, #9400d3);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            margin-bottom: 15px;
+            height: 48px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #mobile-model-form-container button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.5);
+            background: linear-gradient(135deg, #00e6e6, #ff66ff, #ba55d3);
+        }
+
+        #mobile-model-form-container button:after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 182, 193, 0.2) 100%);
+            transform: rotate(45deg);
+            transition: all 0.8s;
+        }
+
+        #mobile-model-form-container button:hover:after {
+            left: 120%;
+            top: 120%;
+        }
+
+        #mobile-model-form-container .success-message {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #ff00ff;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(0, 191, 255, 0.7);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-weight: 500;
+            position: relative;
+            font-size: 14px;
+        }
+
+        #mobile-form-loading {
+            display: none;
+            margin: 15px 0;
+            text-align: center;
+            color: #e6e6fa;
+        }
+
+        #mobile-form-loading .spinner {
+            border: 4px solid rgba(255, 182, 193, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #00bfff;
+            width: 30px;
+            height: 30px;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 10px;
+        }
+        .instagram-embed-container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .instagram-embed {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.9), rgba(0, 191, 255, 0.9), rgba(255, 105, 180, 0.9));
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(147, 112, 219, 0.5);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .instagram-embed:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M50 30 C 60 20, 70 20, 80 30 C 70 40, 60 40, 50 30 C 40 40, 30 40, 20 30 C 30 20, 40 20, 50 30 Z' fill='rgba(255,182,193,0.1)'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+            opacity: 0.2;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .instagram-embed .instagram-media {
+            position: relative;
+            z-index: 1;
+            border-radius: 15px !important;
+            overflow: hidden;
+        }
+
+        /* Custom Instagram Feed Styles */
+        .instagram-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--white);
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info h3 {
+            margin: 0;
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .profile-info p {
+            margin: 2px 0;
+            color: var(--text-light);
+            font-size: 12px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 10px;
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        .follow-btn {
+            background: linear-gradient(90deg, #E1306C, #C13584);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            transition: var(--transition-standard);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .follow-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(225, 48, 108, 0.4);
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .insta-post {
+            aspect-ratio: 1;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-standard);
+        }
+
+        .insta-post:hover {
+            transform: scale(1.02);
+        }
+
+        .insta-post img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .placeholder-post {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.3), rgba(0, 191, 255, 0.3));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .placeholder-post i {
+            font-size: 24px;
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+
+        .placeholder-post p {
+            font-size: 10px;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .post-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .insta-post:hover .post-overlay {
+            opacity: 1;
+        }
+
+        .post-stats {
+            display: flex;
+            gap: 15px;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .post-stats span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .view-more {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .view-more a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            transition: var(--transition-standard);
+        }
+
+        .view-more a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        /* Model Form Styles - Embedded Version */
+        #model-form-container {
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        #model-form-container .header-logo {
+            max-width: 120px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.7));
+        }
+
+        #model-form-container .form-container {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.9), rgba(0, 191, 255, 0.9), rgba(255, 105, 180, 0.9));
+            padding: 20px 25px 30px;
+            border-radius: 20px;
+            width: 100%;
+            box-shadow: var(--box-shadow-secondary);
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #model-form-container .form-container:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M50 30 C 60 20, 70 20, 80 30 C 70 40, 60 40, 50 30 C 40 40, 30 40, 20 30 C 30 20, 40 20, 50 30 Z' fill='rgba(255,182,193,0.1)'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+            opacity: 0.2;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        #model-form-container h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            margin-top: 0;
+            font-size: 22px;
+            font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(147, 112, 219, 0.5);
+            position: relative;
+        }
+
+        #model-form-container .form-group {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        #model-form-container label {
+            display: block;
+            text-align: left;
+            font-size: 12px;
+            margin-bottom: 4px;
+            color: #e6e6fa;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        #model-form-container input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid rgba(255, 182, 193, 0.5);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+            background-color: rgba(255, 255, 255, 0.95);
+            height: 40px;
+            appearance: none;
+            -webkit-appearance: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #model-form-container input:focus {
+            outline: none;
+            border-color: #00bfff;
+            box-shadow: 0 0 12px rgba(0, 191, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        #model-form-container button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff, #9400d3);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            margin-bottom: 15px;
+            height: 48px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #model-form-container button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.5);
+            background: linear-gradient(135deg, #00e6e6, #ff66ff, #ba55d3);
+        }
+
+        #model-form-container button:after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 182, 193, 0.2) 100%);
+            transform: rotate(45deg);
+            transition: all 0.8s;
+        }
+
+        #model-form-container button:hover:after {
+            left: 120%;
+            top: 120%;
+        }
+
+        #model-form-container .success-message {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #ff00ff;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(0, 191, 255, 0.7);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-weight: 500;
+            position: relative;
+            font-size: 14px;
+        }
+
+        #form-loading {
+            display: none;
+            margin: 15px 0;
+            text-align: center;
+            color: #e6e6fa;
+        }
+
+        #form-loading .spinner {
+            border: 4px solid rgba(255, 182, 193, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #00bfff;
+            width: 30px;
+            height: 30px;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Buttons Section */
+        .buttons-section {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            text-align: center;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--deep-accent), var(--secondary-color), var(--accent-color));
+            background-size: 400% 400%;
+            border-radius: var(--border-radius-large);
+            box-shadow: var(--box-shadow-primary);
+            animation: gradientBG 12s ease infinite;
+            position: relative;
+        }
+
+        .main-logo {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.7)); /* Hot pink glow */
+        }
+
+        .highlight-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--secondary-color); /* Electric blue for vibrancy */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.5);
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 20px;
+            transition: var(--transition-standard);
+            text-align: center;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color)); /* Electric blue to hot pink gradient */
+            color: var(--white); /* White text */
+            box-shadow: var(--box-shadow-secondary);
+            border: 2px solid var(--white); /* White border */
+            width: 100%;
+            max-width: 250px;
+            height: 60px;
+            line-height: 60px;
+            white-space: nowrap;
+            flex: 0 1 auto;
+            min-width: 200px;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5); /* Hot pink shadow */
+            background: linear-gradient(90deg, var(--accent-color), var(--tertiary-color)); /* Hot pink to magenta */
+            color: var(--white); /* White text */
+            border-color: var(--white); /* White border */
+            outline: 2px solid var(--secondary-color); /* Electric blue outline */
+            outline-offset: 2px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Footer */
+        .miami-footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            color: var(--text-light); /* Lavender white */
+            background: rgba(255, 255, 255, 0.1); /* Transparent white */
+            border-radius: var(--border-radius-small);
+            border: 1px solid rgba(255, 105, 180, 0.3);
+        }
+
+        .contact-info {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: var(--secondary-color); /* Electric blue */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover,
+        .contact-info a:focus {
+            color: var(--accent-color); /* Hot pink */
+            outline: none;
+        }
+
+        .social-links {
+            margin: 10px 0;
+        }
+
+        .social-links a {
+            color: var(--text-light); /* Lavender white */
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color); /* Hot pink */
+        }
+
+        .copyright {
+            font-size: 16px;
+            opacity: 0.9;
+            color: var(--secondary-color); /* Electric blue */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-and-image-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .embedded-model-form,
+            .image-column {
+                max-width: 100%;
+                min-width: unset;
+            }
+
+            .instagram-embed-container {
+                max-width: 100%;
+            }
+
+            .buttons-section {
+                padding: 30px 20px;
+                margin: 20px auto;
+            }
+
+            .highlight-text {
+                font-size: 24px;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                font-size: 18px;
+                padding: 12px 20px;
+                max-width: 90%;
+                height: auto;
+                line-height: normal;
+                white-space: nowrap;
+                flex: initial;
+            }
+
+            .main-logo {
+                max-width: 250px;
+            }
+
+            #model-form-container h2 {
+                font-size: 20px;
+            }
+
+            /* Show mobile elements on mobile */
+            .mobile-buttons-container {
+                display: flex;
+            }
+
+            .mobile-model-form {
+                display: block;
+            }
+
+            /* Hide desktop elements on mobile */
+            .desktop-buttons-container {
+                display: none;
+            }
+
+            .embedded-model-form {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .highlight-text {
+                font-size: 20px;
+            }
+
+            .cta-button {
+                font-size: 16px;
+                padding: 10px 15px;
+                max-width: 90%;
+                height: auto;
+                line-height: normal;
+            }
+
+            .main-logo {
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Buttons Section -->
+    <section class="buttons-section">
+        <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=1500w"
+             alt="EXA Models Logo"
+             class="main-logo"
+             loading="lazy">
+        <div class="highlight-text">Models. Creators. Influencers.</div>
+
+        <!-- Mobile Model Form (appears right after tagline on mobile) -->
+        <div class="mobile-model-form">
+            <div id="mobile-model-form-container">
+                <div class="form-container">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=1500w" alt="Model Submission Logo" class="header-logo">
+                    <h2>Model Submission</h2>
+
+                    <div id="mobileModelSuccessMessage" class="success-message">
+                        <strong>Thank you for your submission!</strong><br>
+                        Your application has been successfully received. Redirecting you to the model page...
+                    </div>
+
+                    <div id="mobile-form-loading">
+                        <div class="spinner"></div>
+                        <p>Submitting your application...</p>
+                    </div>
+
+                    <form id="mobileModelSubmissionForm">
+                        <div class="form-group">
+                            <label for="mobile-name">Name</label>
+                            <input type="text" id="mobile-name" name="name" placeholder="Your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mobile-instagram">Instagram</label>
+                            <input type="text" id="mobile-instagram" name="instagram" placeholder="@yourusername or full URL" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mobile-phone">Phone Number</label>
+                            <input type="tel" id="mobile-phone" name="phone" placeholder="(555) 123-4567" required>
+                        </div>
+
+                        <button type="submit" id="mobileSubmitButton">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Buttons (after mobile form) -->
+        <div class="mobile-buttons-container">
+            <a href="https://partiful.com/e/OCtwUV7cABiacgxYIw6H" target="_blank" rel="noopener" class="cta-button" aria-label="Art Basel Miami Shows tickets">
+                Art Basel Miami Shows
+            </a>
+            <a href="https://www.examodels.com/brand" target="_blank" rel="noopener" class="cta-button" aria-label="Inquire about brand partnerships">Brand Inquiry</a>
+            <a href="https://www.examodels.com/swim" target="_blank" rel="noopener" class="cta-button" aria-label="Visit EXA SWIM">EXA SWIM</a>
+            <a href="https://www.swimshows.tv" target="_blank" rel="noopener" class="cta-button" aria-label="View upcoming shows">Upcoming Shows</a>
+        </div>
+
+        <div class="buttons-content">
+            <div class="form-and-image-container">
+                <div class="embedded-model-form">
+                    <div id="model-form-container">
+                        <div class="form-container">
+                            <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=1500w" alt="Model Submission Logo" class="header-logo">
+                            <h2>Model Submission</h2>
+
+                            <div id="modelSuccessMessage" class="success-message">
+                                <strong>Thank you for your submission!</strong><br>
+                                Your application has been successfully received. Redirecting you to the model page...
+                            </div>
+
+                            <div id="form-loading">
+                                <div class="spinner"></div>
+                                <p>Submitting your application...</p>
+                            </div>
+
+                            <form id="modelSubmissionForm">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="instagram">Instagram</label>
+                                    <input type="text" id="instagram" name="instagram" placeholder="@yourusername or full URL" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                                </div>
+
+                                <button type="submit" id="submitButton">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Buttons Container (between form and instagram) -->
+                    <div class="desktop-buttons-container">
+                        <a href="https://partiful.com/e/OCtwUV7cABiacgxYIw6H" target="_blank" rel="noopener" class="desktop-cta-button" aria-label="Art Basel Miami Shows tickets">
+                            Art Basel Miami Shows
+                        </a>
+                        <a href="https://www.examodels.com/brand" target="_blank" rel="noopener" class="desktop-cta-button" aria-label="Inquire about brand partnerships">Brand Inquiry</a>
+                        <a href="https://www.examodels.com/swim" target="_blank" rel="noopener" class="desktop-cta-button" aria-label="Visit EXA SWIM">EXA SWIM</a>
+                        <a href="https://www.swimshows.tv" target="_blank" rel="noopener" class="desktop-cta-button" aria-label="View upcoming shows">Upcoming Shows</a>
+                    </div>
+
+                    <!-- Instagram Feed -->
+                    <div class="instagram-embed-container">
+                        <div class="instagram-embed">
+                            <div class="instagram-header">
+                                <div class="profile-section">
+                                    <div class="profile-pic">
+                                        <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=300w" alt="EXA Models">
+                                    </div>
+                                    <div class="profile-info">
+                                        <h3>@examodels</h3>
+                                        <p>EXA Models Agency</p>
+                                        <div class="stats">
+                                            <span><strong>2.5k</strong> posts</span>
+                                            <span><strong>45.2k</strong> followers</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="https://www.instagram.com/examodels/" target="_blank" rel="noopener" class="follow-btn">
+                                    <i class="fab fa-instagram"></i> Follow
+                                </a>
+                            </div>
+
+                            <div class="instagram-grid">
+                                <div class="insta-post">
+                                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/7a547fd8-4f70-4bfc-b7dc-da862ea3310e/Swim+Shows+Main+Flyer+%281%29.png?format=500w" alt="Miami Swim Week" loading="lazy">
+                                    <div class="post-overlay">
+                                        <div class="post-stats">
+                                            <span><i class="fas fa-heart"></i> 1.2k</span>
+                                            <span><i class="fas fa-comment"></i> 89</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="insta-post">
+                                    <img src="https://www.swimshows.tv/images/swim-shows-artbasel.png" alt="Art Basel Miami Swim Shows" loading="lazy">
+                                    <div class="post-overlay">
+                                        <div class="post-stats">
+                                            <span><i class="fas fa-heart"></i> 987</span>
+                                            <span><i class="fas fa-comment"></i> 45</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="insta-post">
+                                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=500w" alt="EXA Models" loading="lazy">
+                                    <div class="post-overlay">
+                                        <div class="post-stats">
+                                            <span><i class="fas fa-heart"></i> 2.1k</span>
+                                            <span><i class="fas fa-comment"></i> 156</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="insta-post">
+                                    <div class="placeholder-post">
+                                        <i class="fas fa-camera"></i>
+                                        <p>Latest swimwear collection showcase</p>
+                                    </div>
+                                    <div class="post-overlay">
+                                        <div class="post-stats">
+                                            <span><i class="fas fa-heart"></i> 834</span>
+                                            <span><i class="fas fa-comment"></i> 67</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="insta-post">
+                                    <div class="placeholder-post">
+                                        <i class="fas fa-users"></i>
+                                        <p>Behind the scenes at Miami Fashion Week</p>
+                                    </div>
+                                    <div class="post-overlay">
+                                        <div class="post-stats">
+                                            <span><i class="fas fa-heart"></i> 1.5k</span>
+                                            <span><i class="fas fa-comment"></i> 92</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="insta-post">
+                                    <div class="placeholder-post">
+                                        <i class="fas fa-star"></i>
+                                        <p>Top models from our latest casting</p>
+                                    </div>
+                                    <div class="post-overlay">
+                                        <div class="post-stats">
+                                            <span><i class="fas fa-heart"></i> 1.8k</span>
+                                            <span><i class="fas fa-comment"></i> 134</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="view-more">
+                                <a href="https://www.instagram.com/examodels/" target="_blank" rel="noopener">
+                                    View All Posts on Instagram <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-column">
+                    <a href="https://www.swimshows.tv" target="_blank" rel="noopener" aria-label="Visit Swim Shows TV">
+                        <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/7a547fd8-4f70-4bfc-b7dc-da862ea3310e/Swim+Shows+Main+Flyer+%281%29.png?format=1000w"
+                             alt="Swim Shows Main Flyer"
+                             class="flyer-image"
+                             loading="lazy">
+                    </a>
+
+                    <a href="https://www.swimshows.tv" target="_blank" rel="noopener" aria-label="Visit Swim Shows TV">
+                        <img src="https://www.swimshows.tv/images/swim-shows-artbasel.png"
+                             alt="Swim Shows Art Basel"
+                             class="swim-shows-image"
+                             loading="lazy">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="miami-footer">
+            <div class="contact-info">CONTACT: <a href="mailto:team@examodels.com">TEAM@EXAMODELS.COM</a></div>
+            <div class="social-links">
+                <a href="https://instagram.com/examodels" target="_blank" rel="noopener" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/examodels" target="_blank" rel="noopener" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://youtube.com/@examodels" target="_blank" rel="noopener" aria-label="Subscribe to our YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="copyright">EXA Models 2025</div>
+        </footer>
+    </section>
+
+    <script>
+        // Enhanced form submission handler with redirect
+        function handleFormSubmission(formElement, submitButtonId, loadingId, successMessageId, isDesktop = true) {
+            formElement.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Show loading indicator and disable submit button
+                const submitButton = document.getElementById(submitButtonId);
+                const loadingIndicator = document.getElementById(loadingId);
+
+                submitButton.disabled = true;
+                loadingIndicator.style.display = 'block';
+
+                // Prepare form data
+                const formData = new FormData();
+
+                // Get all form inputs and add them to FormData
+                const inputs = this.querySelectorAll('input');
+                inputs.forEach(input => {
+                    let value = input.value || '';
+                    formData.append(input.name, value);
+                });
+
+                // Send data to Google Apps Script
+                fetch('https://script.google.com/macros/s/AKfycbzdbB9fP1DAu891h4niDQGuJUb7IeHWXsDn06aMtlhiap_OcfcqY0wdviGfEq1WQMFMug/exec', {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' // Handle CORS issues
+                })
+                .then(() => {
+                    console.log('Form submitted successfully');
+                    handleSubmissionSuccess(formElement, submitButton, loadingIndicator, successMessageId);
+                })
+                .catch(error => {
+                    console.log('Submission completed - no-cors mode prevents error detection');
+                    handleSubmissionSuccess(formElement, submitButton, loadingIndicator, successMessageId);
+                });
+            });
+        }
+
+        function handleSubmissionSuccess(formElement, submitButton, loadingIndicator, successMessageId) {
+            // Hide loading indicator
+            loadingIndicator.style.display = 'none';
+
+            // Show success message
+            document.getElementById(successMessageId).style.display = 'block';
+
+            // Clear form
+            formElement.reset();
+
+            // Re-enable submit button
+            submitButton.disabled = false;
+
+            // Redirect after 2 seconds
+            setTimeout(function() {
+                window.location.href = 'https://www.examodels.com/model';
+            }, 2000);
+        }
+
+        // Initialize both forms
+        const desktopForm = document.getElementById('modelSubmissionForm');
+        const mobileForm = document.getElementById('mobileModelSubmissionForm');
+
+        handleFormSubmission(desktopForm, 'submitButton', 'form-loading', 'modelSuccessMessage', true);
+        handleFormSubmission(mobileForm, 'mobileSubmitButton', 'mobile-form-loading', 'mobileModelSuccessMessage', false);
+
+        // Back to Top Button (if exists)
+        const backToTop = document.querySelector('.back-to-top');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                backToTop.classList.toggle('visible', window.scrollY > 300);
+            });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    </script>
+</body>
+</html>
