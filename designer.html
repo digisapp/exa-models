@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Brands Pricing</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e);
+            color: #ffffff;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .designer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+        }
+
+        .language-toggle {
+            text-align: right;
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .lang-btn.active {
+            color: #00ff7f;
+        }
+
+        .designer-header {
+            text-align: center;
+            margin-bottom: 60px;
+            margin-top: 20px;
+        }
+
+        .designer-logo {
+            max-width: 150px;
+            margin-bottom: 15px;
+            margin-top: 0;
+            filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
+        }
+
+        .designer-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00ffff, #ff00ff, #9400d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(255, 182, 193, 0.5);
+            line-height: 1.2;
+            padding: 5px 0;
+        }
+
+        .designer-subtitle {
+            font-size: 1.2rem;
+            color: #e6e6fa;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            line-height: 1.6;
+        }
+
+        .menu-overview {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.2), rgba(0, 191, 255, 0.2), rgba(255, 105, 180, 0.2));
+            border: 2px solid rgba(255, 182, 193, 0.4);
+            border-radius: 25px;
+            padding: 40px 30px;
+            margin: 60px 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-overview h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 182, 193, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #00bfff;
+            transform: translateY(-5px);
+        }
+
+        .menu-item h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .menu-item .menu-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .menu-item .menu-description {
+            font-size: 0.9rem;
+            color: #e6e6fa;
+            opacity: 0.8;
+        }
+
+        .individual-shows-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+            align-items: start;
+        }
+
+        .billing-toggle {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .billing-toggle label {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+
+        .billing-toggle input {
+            display: none;
+        }
+
+        .billing-toggle input:checked + label {
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            color: #000;
+        }
+
+        .billing-toggle .annual-discount {
+            color: #00ff7f;
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+
+        .designer-packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+            align-items: start;
+        }
+
+        .designer-package-card {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.15), rgba(0, 191, 255, 0.15), rgba(255, 105, 180, 0.15));
+            border: 2px solid #ff1493;
+            border-radius: 25px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .designer-package-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #00bfff;
+            box-shadow: 0 20px 50px rgba(0, 191, 255, 0.4);
+        }
+
+        .designer-package-card.popular {
+            border-color: #00ff7f;
+            box-shadow: 0 15px 40px rgba(0, 255, 127, 0.4);
+            transform: scale(1.05);
+        }
+
+        .designer-package-card.popular .designer-package-name::after {
+            content: "Most Popular";
+            display: block;
+            background: #00ff7f;
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 15px;
+            margin-top: 8px;
+            width: fit-content;
+            margin: 8px auto 0;
+        }
+
+        .designer-package-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .designer-package-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(147, 112, 219, 0.6);
+        }
+
+        .designer-package-description {
+            font-size: 1rem;
+            color: #e6e6fa;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .designer-pricing {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .designer-monthly-price {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .designer-savings {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-top: 5px;
+        }
+
+        .designer-features {
+            margin-bottom: 35px;
+        }
+
+        .designer-feature-category {
+            margin-bottom: 20px;
+        }
+
+        .designer-feature-category h4 {
+            color: #ff69b4;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .designer-feature-list {
+            list-style: none;
+        }
+
+        .designer-feature-list li {
+            color: #e6e6fa;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .designer-feature-list li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            color: #00bfff;
+        }
+
+        .designer-cta-button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff, #9400d3);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .designer-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 191, 255, 0.5);
+            background: linear-gradient(135deg, #00e6e6, #ff66ff, #ba55d3);
+        }
+
+        .comparison-table {
+            margin: 100px 0 60px 0;
+            overflow-x: auto;
+        }
+
+        .comparison-table h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 182, 193, 0.3);
+            color: #e6e6fa;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #ff00ff, #9400d3);
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .comparison-table .check {
+            color: #00ff7f;
+            font-size: 1.2rem;
+        }
+
+        .comparison-table .cross {
+            color: #ff1493;
+            font-size: 1.2rem;
+        }
+
+        .designer-ala-carte {
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .designer-ala-carte h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
+
+        .designer-ala-carte-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+            align-items: start;
+        }
+
+        .video-section {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .video-section h2 {
+            color: #ffffff;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container iframe {
+            border-radius: 20px;
+        }
+
+        .video-link {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff, #9400d3);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .video-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 191, 255, 0.5);
+        }
+
+        .designer-footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 182, 193, 0.3);
+        }
+
+        .designer-design-icon {
+            max-width: 60px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.7));
+        }
+
+        .designer-footer p {
+            color: #e6e6fa;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .designer-contact-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.8), rgba(0, 191, 255, 0.8));
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 182, 193, 0.5);
+        }
+
+        .designer-contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4);
+        }
+
+        [lang="en"] .lang.es {
+            display: none;
+        }
+
+        [lang="es"] .lang.en {
+            display: none;
+        }
+
+        .lang {
+            display: inline;
+        }
+
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .menu-overview {
+                padding: 30px 20px;
+                margin: 40px 0;
+            }
+
+            .designer-packages-grid,
+            .designer-ala-carte-grid,
+            .individual-shows-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .designer-package-card {
+                padding: 30px 20px;
+            }
+
+            .designer-title {
+                font-size: 2.5rem;
+            }
+
+            .designer-subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
+                max-width: 100%;
+            }
+
+            .designer-monthly-price {
+                font-size: 2.5rem;
+            }
+
+            .designer-container {
+                padding: 0 15px 20px 15px;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="designer-pricing" lang="en">
+        <div class="designer-container">
+            <div class="language-toggle">
+                <button onclick="setLanguage('en')" class="lang-btn active">English</button>
+                <button onclick="setLanguage('es')" class="lang-btn">Español</button>
+            </div>
+            
+            <div class="designer-header">
+                <img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=1500w" alt="EXA Design Logo" class="designer-logo">
+                <h1 class="designer-title">
+                    <span class="lang en">Designer Brands</span>
+                    <span class="lang es">Marcas de Diseñadores</span>
+                </h1>
+                <p class="designer-subtitle">
+                    <span class="lang en">Showcase in our Swim & Resort Fashion Shows across top cities worldwide. From vibrant runways to high-impact media exposure, elevate your collection with global visibility</span>
+                    <span class="lang es">Exhibe en nuestros Desfiles de Moda de Swim & Resort en las principales ciudades del mundo. Desde pasarelas vibrantes hasta exposición mediática de alto impacto, eleva tu colección con visibilidad global</span>
+                </p>
+            </div>
+
+            <div class="menu-overview">
+                <h2>
+                    <span class="lang en">Our Packages</span>
+                    <span class="lang es">Nuestros Paquetes</span>
+                </h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <h3>
+                            <span class="lang en">New York Fashion Week</span>
+                            <span class="lang es">New York Fashion Week</span>
+                        </h3>
+                        <div class="menu-price">$2,500</div>
+                        <div class="menu-description">
+                            <span class="lang en">Single Show</span>
+                            <span class="lang es">Desfile Individual</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h3>
+                            <span class="lang en">Art Basel Show</span>
+                            <span class="lang es">Desfile Art Basel</span>
+                        </h3>
+                        <div class="menu-price">$2,500</div>
+                        <div class="menu-description">
+                            <span class="lang en">Single Show</span>
+                            <span class="lang es">Desfile Individual</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h3>
+                            <span class="lang en">Miami Swim Week</span>
+                            <span class="lang es">Miami Swim Week</span>
+                        </h3>
+                        <div class="menu-price">$4,000</div>
+                        <div class="menu-description">
+                            <span class="lang en">Single Show</span>
+                            <span class="lang es">Desfile Individual</span>
+                        </div>
+                    </div>
+                    <div class="menu-item" onclick="scrollToTour()">
+                        <h3>
+                            <span class="lang en">Tour</span>
+                            <span class="lang es">Tour</span>
+                        </h3>
+                        <div class="menu-price">
+                            <span class="lang en">$1,250/month</span>
+                            <span class="lang es">$1,250/mes</span>
+                        </div>
+                        <div class="menu-description">
+                            <span class="lang en">12 Shows/Year</span>
+                            <span class="lang es">12 Desfiles/Año</span>
+                        </div>
+                    </div>
+                    <div class="menu-item" onclick="scrollToTourLuxe()">
+                        <h3>
+                            <span class="lang en">Tour Luxe</span>
+                            <span class="lang es">Tour Luxe</span>
+                        </h3>
+                        <div class="menu-price">
+                            <span class="lang en">$1,750/month</span>
+                            <span class="lang es">$1,750/mes</span>
+                        </div>
+                        <div class="menu-description">
+                            <span class="lang en">12 Shows/Year</span>
+                            <span class="lang es">12 Desfiles/Año</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="designer-footer">
+                <img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/d16a21b5-cbdd-4572-8339-59791386ab68/swim+icon.png?format=750w" alt="Design Icon" class="designer-design-icon">
+                <p>
+                    <span class="lang en">Contact Us for Additional Questions.</span>
+                    <span class="lang es">Contáctanos para Preguntas Adicionales.</span>
+                </p>
+                <a href="mailto:team@examodels.com" class="designer-contact-btn">
+                    <span class="lang en">Contact Us Today</span>
+                    <span class="lang es">Contáctanos Hoy</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            document.getElementById('designer-pricing').setAttribute('lang', lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function scrollToTour() {
+            document.getElementById('tour-package')?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+
+        function scrollToTourLuxe() {
+            document.getElementById('tour-luxe-package')?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+    </script>
+</body>
+</html>
