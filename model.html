@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Model profile - EXA Models">
+    <title>Model Profile | EXA Models</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            color: #E6E6FA;
+            background: linear-gradient(135deg, #1a0033, #2d1b69, #000033);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-shadow: 0 1px 2px rgba(148, 0, 211, 0.3);
+        }
+
+        .profile-container {
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(0, 191, 255, 0.2));
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(255, 105, 180, 0.6), 0 0 35px rgba(0, 191, 255, 0.5), 0 0 50px rgba(255, 105, 180, 0.4);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            margin: 10px auto;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            color: #FF99CC;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+            margin: 0 auto 1rem;
+            font-weight: 700;
+        }
+
+        .profile-image-container {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #FFFFFF;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+            margin: 0 auto 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image-container:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .model-name {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #00BFFF;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .instagram-handle {
+            font-size: 1rem;
+            color: #FF69B4;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .profile-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            background: linear-gradient(90deg, #00BFFF, #FF69B4);
+            color: #FFFFFF;
+            box-shadow: 0 3px 10px rgba(148, 0, 211, 0.2);
+            border: 2px solid #FFFFFF;
+            width: 100%;
+            max-width: 250px;
+            height: 40px;
+            line-height: normal;
+        }
+
+        .profile-button:hover,
+        .profile-button:focus {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+            background: linear-gradient(90deg, #FF69B4, #FF00FF);
+            color: #FFFFFF;
+            border-color: #FFFFFF;
+            outline: 2px solid #00BFFF;
+            outline-offset: 2px;
+        }
+
+        .back-button {
+            margin-top: 1.5rem;
+            background: linear-gradient(90deg, #9400D3, #4B0082);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(90deg, #4B0082, #9400D3);
+        }
+
+        .loading {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #00BFFF;
+        }
+
+        .error {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .error h1 {
+            font-size: 2rem;
+            color: #FF69B4;
+            margin-bottom: 1rem;
+        }
+
+        .error p {
+            color: #E6E6FA;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .profile-container {
+                padding: 1.5rem;
+                margin: 10px auto;
+            }
+
+            .model-name {
+                font-size: 1.25rem;
+            }
+
+            .profile-button {
+                font-size: 0.875rem;
+                padding: 0.4rem 1rem;
+                max-width: 90%;
+                height: 35px;
+            }
+
+            .profile-image-container {
+                width: 160px;
+                height: 160px;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="loading">Loading...</div>
+    </div>
+
+    <script>
+        // Get model ID from URL path
+        const path = window.location.pathname;
+        const modelId = path.substring(1) || path; // Remove leading slash
+
+        // Load model data
+        async function loadModel() {
+            try {
+                const response = await fetch('/models.json');
+                const models = await response.json();
+
+                // Find the model by ID
+                const model = models.find(m => m.id === modelId);
+
+                if (model) {
+                    renderModel(model);
+                } else {
+                    renderError();
+                }
+            } catch (error) {
+                console.error('Error loading model:', error);
+                renderError();
+            }
+        }
+
+        function renderModel(model) {
+            const app = document.getElementById('app');
+
+            // Update page title
+            document.title = `${model.name} | EXA Models`;
+
+            // Update meta description
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) {
+                metaDesc.content = `${model.name} - Model profile at EXA Models`;
+            }
+
+            // Render profile
+            app.innerHTML = `
+                <div class="profile-container">
+                    <div class="logo">exa</div>
+
+                    <div class="profile-image-container">
+                        <img src="${model.photo}"
+                             alt="${model.name} Profile"
+                             class="profile-image"
+                             loading="lazy">
+                    </div>
+
+                    <h1 class="model-name">${model.name}</h1>
+
+                    ${model.instagram ? `<div class="instagram-handle">${model.instagram}</div>` : ''}
+
+                    <div class="buttons-container">
+                        ${model.links.map(link => `
+                            <a href="${link.url}"
+                               target="_blank"
+                               rel="noopener"
+                               class="profile-button"
+                               aria-label="${link.title}">
+                                ${link.title}
+                            </a>
+                        `).join('')}
+
+                        <a href="/" class="profile-button back-button">
+                            Back to Home
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderError() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="profile-container error">
+                    <div class="logo">exa</div>
+                    <h1>Model Not Found</h1>
+                    <p>Sorry, we couldn't find this model profile.</p>
+                    <a href="/" class="profile-button">Back to Home</a>
+                </div>
+            `;
+        }
+
+        // Load model on page load
+        loadModel();
+    </script>
+</body>
+</html>

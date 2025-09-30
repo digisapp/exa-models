@@ -1,0 +1,18 @@
+[
+  {
+    "id": "miriam",
+    "name": "Miriam Haase",
+    "photo": "https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/20bcd834-11b6-4b90-9268-aa4847718744/Screenshot+2025-07-21+at+3.53.53%E2%80%AFPM.png?format=750w",
+    "instagram": "@miriamhaase",
+    "links": [
+      {
+        "title": "EXA Models",
+        "url": "https://www.examodels.com"
+      },
+      {
+        "title": "Swim Shows",
+        "url": "https://www.swimshows.tv"
+      }
+    ]
+  }
+]
