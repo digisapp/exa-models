@@ -67,5 +67,38 @@
         "url": "https://www.tiktok.com/@itspresplay"
       }
     ]
+  },
+  {
+    "id": "stephaniezustovich",
+    "name": "Stephanie Zustovich",
+    "photo": "https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/cfeeb526-f71a-441f-ad6d-62596fa5c2a9/Screenshot+2024-10-10+at+11.16.12%E2%80%AFAM.png",
+    "instagram": "@stephaniezustovich",
+    "stats": {
+      "height": "5'8\"",
+      "bust": "36",
+      "waist": "25",
+      "hips": "37",
+      "shoe": "8",
+      "hair": "Brown",
+      "eyes": "Blue"
+    },
+    "links": [
+      {
+        "title": "Instagram",
+        "url": "https://www.instagram.com/_carolinecook_"
+      },
+      {
+        "title": "TikTok",
+        "url": "https://www.tiktok.com/@stephaniezustovich"
+      },
+      {
+        "title": "VSCO",
+        "url": "https://vsco.co/stephaniezustovich/gallery"
+      },
+      {
+        "title": "Venmo",
+        "url": "https://venmo.com/u/Stephanie-Zustovich"
+      }
+    ]
   }
 ]
