@@ -130,6 +130,46 @@
             outline-offset: 2px;
         }
 
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .profile-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            background: linear-gradient(90deg, #00BFFF, #FF69B4);
+            color: #FFFFFF;
+            box-shadow: 0 3px 10px rgba(148, 0, 211, 0.2);
+            border: 2px solid #FFFFFF;
+            width: 100%;
+            max-width: 250px;
+            height: 40px;
+            line-height: normal;
+        }
+
+        .profile-button:hover,
+        .profile-button:focus {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+            background: linear-gradient(90deg, #FF69B4, #FF00FF);
+            color: #FFFFFF;
+            border-color: #FFFFFF;
+            outline: 2px solid #00BFFF;
+            outline-offset: 2px;
+        }
+
 
         .gallery {
             margin: 1.5rem 0;
@@ -192,6 +232,13 @@
                 font-size: 1.25rem;
             }
 
+            .profile-button {
+                font-size: 0.875rem;
+                padding: 0.4rem 1rem;
+                max-width: 90%;
+                height: 35px;
+            }
+
             .profile-image-container {
                 width: 160px;
                 height: 160px;
@@ -233,6 +280,17 @@
             }
         }
 
+        function isSocialMedia(title) {
+            const titleLower = title.toLowerCase();
+            return titleLower.includes('instagram') ||
+                   titleLower.includes('tiktok') ||
+                   titleLower.includes('snapchat') ||
+                   titleLower.includes('twitter') ||
+                   titleLower.includes('facebook') ||
+                   titleLower.includes('youtube') ||
+                   titleLower.includes('linkedin');
+        }
+
         function getIconClass(title) {
             const titleLower = title.toLowerCase();
             if (titleLower.includes('instagram')) return 'fab fa-instagram';
@@ -242,13 +300,7 @@
             if (titleLower.includes('facebook')) return 'fab fa-facebook';
             if (titleLower.includes('youtube')) return 'fab fa-youtube';
             if (titleLower.includes('linkedin')) return 'fab fa-linkedin';
-            if (titleLower.includes('amazon')) return 'fab fa-amazon';
-            if (titleLower.includes('cashapp') || titleLower.includes('cash app')) return 'fas fa-dollar-sign';
-            if (titleLower.includes('venmo')) return 'fas fa-dollar-sign';
-            if (titleLower.includes('vsco')) return 'fas fa-camera';
-            if (titleLower.includes('exa') || titleLower.includes('swim')) return 'fas fa-link';
-            if (titleLower.includes('edikted')) return 'fas fa-shopping-bag';
-            return 'fas fa-link';
+            return '';
         }
 
         function renderModel(model) {
@@ -277,17 +329,33 @@
 
                     <h1 class="model-name">${model.name}</h1>
 
-                    <div class="social-icons">
-                        ${model.links.map(link => `
-                            <a href="${link.url}"
-                               target="_blank"
-                               rel="noopener"
-                               class="social-icon"
-                               aria-label="${link.title}">
-                                <i class="${getIconClass(link.title)}"></i>
-                            </a>
-                        `).join('')}
-                    </div>
+                    ${model.links.some(link => isSocialMedia(link.title)) ? `
+                        <div class="social-icons">
+                            ${model.links.filter(link => isSocialMedia(link.title)).map(link => `
+                                <a href="${link.url}"
+                                   target="_blank"
+                                   rel="noopener"
+                                   class="social-icon"
+                                   aria-label="${link.title}">
+                                    <i class="${getIconClass(link.title)}"></i>
+                                </a>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+
+                    ${model.links.some(link => !isSocialMedia(link.title)) ? `
+                        <div class="buttons-container">
+                            ${model.links.filter(link => !isSocialMedia(link.title)).map(link => `
+                                <a href="${link.url}"
+                                   target="_blank"
+                                   rel="noopener"
+                                   class="profile-button"
+                                   aria-label="${link.title}">
+                                    ${link.title}
+                                </a>
+                            `).join('')}
+                        </div>
+                    ` : ''}
 
                     ${model.gallery ? `
                         <div class="gallery">
