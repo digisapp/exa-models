@@ -266,14 +266,6 @@
 
                     <h1 class="model-name">${model.name}</h1>
 
-                    ${model.gallery ? `
-                        <div class="gallery">
-                            ${model.gallery.map(photo => `
-                                <img src="${photo}" alt="${model.name}" loading="lazy">
-                            `).join('')}
-                        </div>
-                    ` : ''}
-
                     <div class="buttons-container">
                         ${model.links.map(link => `
                             <a href="${link.url}"
@@ -285,6 +277,14 @@
                             </a>
                         `).join('')}
                     </div>
+
+                    ${model.gallery ? `
+                        <div class="gallery">
+                            ${model.gallery.map(photo => `
+                                <img src="${photo}" alt="${model.name}" loading="lazy">
+                            `).join('')}
+                        </div>
+                    ` : ''}
                 </div>
             `;
         }
