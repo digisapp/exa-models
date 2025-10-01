@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -97,41 +98,34 @@
         }
 
 
-        .buttons-container {
+        .social-icons {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            align-items: center;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
         }
 
-        .profile-button {
-            display: flex;
+        .social-icon {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.5rem 1.25rem;
-            border-radius: 25px;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            text-align: center;
-            background: linear-gradient(90deg, #00BFFF, #FF69B4);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00BFFF, #FF69B4);
             color: #FFFFFF;
-            box-shadow: 0 3px 10px rgba(148, 0, 211, 0.2);
-            border: 2px solid #FFFFFF;
-            width: 100%;
-            max-width: 250px;
-            height: 40px;
-            line-height: normal;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(148, 0, 211, 0.3);
         }
 
-        .profile-button:hover,
-        .profile-button:focus {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
-            background: linear-gradient(90deg, #FF69B4, #FF00FF);
-            color: #FFFFFF;
-            border-color: #FFFFFF;
+        .social-icon:hover,
+        .social-icon:focus {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+            background: linear-gradient(135deg, #FF69B4, #FF00FF);
             outline: 2px solid #00BFFF;
             outline-offset: 2px;
         }
@@ -192,11 +186,10 @@
                 font-size: 1.25rem;
             }
 
-            .profile-button {
-                font-size: 0.875rem;
-                padding: 0.4rem 1rem;
-                max-width: 90%;
-                height: 35px;
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.25rem;
             }
 
             .profile-image-container {
@@ -240,6 +233,24 @@
             }
         }
 
+        function getIconClass(title) {
+            const titleLower = title.toLowerCase();
+            if (titleLower.includes('instagram')) return 'fab fa-instagram';
+            if (titleLower.includes('tiktok')) return 'fab fa-tiktok';
+            if (titleLower.includes('snapchat')) return 'fab fa-snapchat';
+            if (titleLower.includes('twitter') || titleLower.includes('x')) return 'fab fa-twitter';
+            if (titleLower.includes('facebook')) return 'fab fa-facebook';
+            if (titleLower.includes('youtube')) return 'fab fa-youtube';
+            if (titleLower.includes('linkedin')) return 'fab fa-linkedin';
+            if (titleLower.includes('amazon')) return 'fab fa-amazon';
+            if (titleLower.includes('cashapp') || titleLower.includes('cash app')) return 'fas fa-dollar-sign';
+            if (titleLower.includes('venmo')) return 'fas fa-dollar-sign';
+            if (titleLower.includes('vsco')) return 'fas fa-camera';
+            if (titleLower.includes('exa') || titleLower.includes('swim')) return 'fas fa-link';
+            if (titleLower.includes('edikted')) return 'fas fa-shopping-bag';
+            return 'fas fa-link';
+        }
+
         function renderModel(model) {
             const app = document.getElementById('app');
 
@@ -266,14 +277,14 @@
 
                     <h1 class="model-name">${model.name}</h1>
 
-                    <div class="buttons-container">
+                    <div class="social-icons">
                         ${model.links.map(link => `
                             <a href="${link.url}"
                                target="_blank"
                                rel="noopener"
-                               class="profile-button"
+                               class="social-icon"
                                aria-label="${link.title}">
-                                ${link.title}
+                                <i class="${getIconClass(link.title)}"></i>
                             </a>
                         `).join('')}
                     </div>
@@ -296,7 +307,9 @@
                     <div class="logo">exa</div>
                     <h1>Model Not Found</h1>
                     <p>Sorry, we couldn't find this model profile.</p>
-                    <a href="/" class="profile-button">Back to Home</a>
+                    <a href="/" class="social-icon" style="width: auto; padding: 0.75rem 1.5rem; border-radius: 25px;">
+                        <i class="fas fa-home"></i>
+                    </a>
                 </div>
             `;
         }
