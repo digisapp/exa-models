@@ -927,12 +927,121 @@
                 max-width: 200px;
             }
         }
+        /* Scrolling Header Styles */
+        @keyframes tokyoGlow {
+            0% {
+                box-shadow: 0 0 25px rgba(255, 105, 180, 0.6), 0 0 35px rgba(0, 191, 255, 0.4);
+                border-color: rgba(255, 105, 180, 0.8);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(0, 191, 255, 0.8), 0 0 45px rgba(255, 0, 255, 0.6);
+                border-color: rgba(0, 191, 255, 0.9);
+            }
+            100% {
+                box-shadow: 0 0 25px rgba(255, 105, 180, 0.6), 0 0 35px rgba(0, 191, 255, 0.4);
+                border-color: rgba(255, 105, 180, 0.8);
+            }
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header-container {
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(135deg, #4B0082, #9400D3, #00BFFF, #FF69B4, #FF00FF);
+            background-size: 400% 400%;
+            padding: 15px 0;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: tokyoGlow 3s infinite ease-in-out, gradientBG 8s ease infinite;
+            position: relative;
+            backdrop-filter: blur(5px);
+            margin-bottom: 20px;
+        }
+
+        .header-container:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M50 30 C 60 20, 70 20, 80 30 C 70 40, 60 40, 50 30 C 40 40, 30 40, 20 30 C 30 20, 40 20, 50 30 Z' fill='rgba(255,182,193,0.1)'/%3E%3C/svg%3E");
+            background-size: 80px 80px;
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .moving-header {
+            display: flex;
+            width: max-content;
+            animation: slide 25s linear infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        .moving-header .text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #FFFFFF;
+            white-space: nowrap;
+            margin-right: 0;
+            text-shadow: 2px 2px 8px rgba(148, 0, 211, 0.7), 0 0 15px rgba(255, 105, 180, 0.5);
+            letter-spacing: 1px;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .header-container:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .moving-header .text {
+                font-size: 22px;
+            }
+            .header-container {
+                padding: 12px 0;
+                border-radius: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .moving-header .text {
+                font-size: 18px;
+                letter-spacing: 0.5px;
+            }
+            .header-container {
+                padding: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Scrolling Header -->
+    <a href="/shows" style="display: block; text-decoration: none; padding: 20px 20px 0;">
+        <div class="header-container">
+            <div class="moving-header">
+                <span class="text"> 📸   Upcoming Shows! NEW YORK, CALI, ARIZONA, MIAMI 💧 Models ~ Designers ~ Brands ~ Artist ☀️ </span>
+                <span class="text"> 📸   Upcoming Shows! NEW YORK, CALI, ARIZONA, MIAMI 💧 Models ~ Designers ~ Brands ~ Artist ☀️ </span>
+                <span class="text"> 📸   Upcoming Shows! NEW YORK, CALI, ARIZONA, MIAMI 💧 Models ~ Designers ~ Brands ~ Artist ☀️ </span>
+            </div>
+        </div>
+    </a>
+
     <!-- Buttons Section -->
     <section class="buttons-section">
-        <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=1500w"
+        <img src="/images/exa-white-logo.png"
              alt="EXA Models Logo"
              class="main-logo"
              loading="lazy">
@@ -942,7 +1051,7 @@
         <div class="mobile-model-form">
             <div id="mobile-model-form-container">
                 <div class="form-container">
-                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=1500w" alt="Model Submission Logo" class="header-logo">
+                    <img src="/images/exa-white-logo.png" alt="Model Submission Logo" class="header-logo">
                     <h2>Model Submission</h2>
 
                     <div id="mobileModelSuccessMessage" class="success-message">
@@ -992,7 +1101,7 @@
                 <div class="embedded-model-form">
                     <div id="model-form-container">
                         <div class="form-container">
-                            <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=1500w" alt="Model Submission Logo" class="header-logo">
+                            <img src="/images/exa-white-logo.png" alt="Model Submission Logo" class="header-logo">
                             <h2>Model Submission</h2>
 
                             <div id="modelSuccessMessage" class="success-message">
@@ -1042,7 +1151,7 @@
                             <div class="instagram-header">
                                 <div class="profile-section">
                                     <div class="profile-pic">
-                                        <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=300w" alt="EXA Models">
+                                        <img src="/images/exa-white-logo.png" alt="EXA Models">
                                     </div>
                                     <div class="profile-info">
                                         <h3>@examodels</h3>
@@ -1060,7 +1169,7 @@
 
                             <div class="instagram-grid">
                                 <div class="insta-post">
-                                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/7a547fd8-4f70-4bfc-b7dc-da862ea3310e/Swim+Shows+Main+Flyer+%281%29.png?format=500w" alt="Miami Swim Week" loading="lazy">
+                                    <img src="/images/swim-shows-models-flyer.png" alt="Miami Swim Week" loading="lazy">
                                     <div class="post-overlay">
                                         <div class="post-stats">
                                             <span><i class="fas fa-heart"></i> 1.2k</span>
@@ -1080,7 +1189,7 @@
                                 </div>
 
                                 <div class="insta-post">
-                                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/134ed329-9c9d-46c6-8187-b9612e8f6651/exa+white+logo.png?format=500w" alt="EXA Models" loading="lazy">
+                                    <img src="/images/exa-white-logo.png" alt="EXA Models" loading="lazy">
                                     <div class="post-overlay">
                                         <div class="post-stats">
                                             <span><i class="fas fa-heart"></i> 2.1k</span>
@@ -1140,7 +1249,7 @@
 
                 <div class="image-column">
                     <a href="https://www.swimshows.tv" target="_blank" rel="noopener" aria-label="Visit Swim Shows TV">
-                        <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/7a547fd8-4f70-4bfc-b7dc-da862ea3310e/Swim+Shows+Main+Flyer+%281%29.png?format=1000w"
+                        <img src="/images/swim-shows-models-flyer.png"
                              alt="Swim Shows Main Flyer"
                              class="flyer-image"
                              loading="lazy">

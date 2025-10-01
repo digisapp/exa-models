@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join NY Fashion Week Show for a vibrant showcase of global swimwear designers and top models.">
+    <meta name="keywords" content="NY Fashion Week Show, Swim Shows, Fashion, Swimwear, EXA Models">
+    <meta name="author" content="EXA Models">
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="NY Fashion Week Show 2025">
+    <meta property="og:description" content="🔥Experience the hottest Swim Shows!🔥 Featuring the World's Top Models showcasing global Swimwear Brands.">
+    <meta property="og:image" content="/images/swim-shows-flyer.jpg">
+    <meta property="og:url" content="https://www.examodels.com">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NY Fashion Week Show 2025">
+    <meta name="twitter:description" content="Join us for an unforgettable celebration of fashion at NY Fashion Week Show.">
+    <meta name="twitter:image" content="/images/swim-shows-flyer.jpg">
+    <title>NY Fashion Week Show 2025</title>
+    <!-- Preload critical font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        /* Root Variables */
+        :root {
+            --accent-color: #ff9900;
+            --border-radius-large: 20px;
+            --border-radius-medium: 15px;
+            --border-radius-small: 10px;
+            --box-shadow-primary: 0 0 25px rgba(0, 255, 213, 0.8), 0 0 40px rgba(255, 153, 0, 0.5);
+            --box-shadow-secondary: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --primary-color: #ff1493;
+            --secondary-color: #00ffd5;
+            --tertiary-color: #00b7a8;
+            --transition-standard: all 0.3s ease;
+            --white: #ffffff;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Section */
+        .miami-section {
+            animation: gradientBG 10s ease infinite;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color), var(--accent-color), var(--tertiary-color));
+            background-size: 400% 400%;
+            border-radius: var(--border-radius-large);
+            box-shadow: var(--box-shadow-primary);
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 40px 30px;
+            position: relative;
+            text-align: center;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Sticky Header */
+        .sticky-header {
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
+            border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            transition: var(--transition-standard);
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .sticky-header.scrolled {
+            padding: 5px 20px;
+            transform: scale(0.95);
+        }
+
+        .sticky-header-content {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 10px 20px;
+        }
+
+        .sticky-logo {
+            filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.7));
+            height: 40px;
+            width: auto;
+        }
+
+        /* Countdown Styling */
+        .countdown-wrapper {
+            align-items: center;
+            display: flex;
+            gap: 15px;
+        }
+
+        .swim-week-text {
+            color: var(--white);
+            font-size: clamp(16px, 2vw, 18px);
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .sticky-countdown {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            color: var(--white);
+            font-size: clamp(18px, 2vw, 20px);
+            font-weight: bold;
+            padding: 8px 15px;
+            text-align: center;
+        }
+
+        .sticky-cta-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .sticky-cta-button {
+            background: var(--white);
+            border: 2px solid var(--white);
+            border-radius: 30px;
+            box-shadow: var(--box-shadow-secondary);
+            color: var(--primary-color);
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 8px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: var(--transition-standard);
+        }
+
+        .sticky-cta-button:hover,
+        .sticky-cta-button:focus {
+            background: var(--primary-color);
+            border-color: var(--white);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            color: var(--white);
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        .sticky-cta-button.outline {
+            background: transparent;
+            color: var(--white);
+        }
+
+        .sticky-cta-button.outline:hover,
+        .sticky-cta-button.outline:focus {
+            background: var(--white);
+            color: var(--secondary-color);
+        }
+
+        /* Logo */
+        .miami-logo {
+            filter: drop-shadow(0px 0px 12px rgba(255, 255, 255, 1));
+            height: auto;
+            margin-bottom: 0;
+            margin-top: 40px;
+            max-width: 250px;
+        }
+
+        /* Buttons */
+        .button-container {
+            animation: fadeIn 0.5s ease-in-out;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .miami-button {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color), var(--secondary-color));
+            background-size: 200% 200%;
+            border-radius: 50px;
+            box-shadow: 0 0 18px rgba(0, 255, 213, 0.9);
+            color: var(--white);
+            display: inline-block;
+            font-size: clamp(16px, 2vw, 18px);
+            font-weight: bold;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: var(--transition-standard);
+            white-space: normal;
+            width: 300px;
+        }
+
+        .miami-button:hover,
+        .miami-button:focus {
+            background-position: right center;
+            box-shadow: 0 0 35px rgba(255, 153, 0, 0.9);
+            color: var(--white);
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+            transform: scale(1.08);
+        }
+
+        .bounce:hover {
+            animation: softBounce 2s ease-in-out 3;
+        }
+
+        @keyframes softBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-7px); }
+        }
+
+        /* Intro Message */
+        .intro-message {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-medium);
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .intro-message p {
+            color: var(--white);
+            font-size: clamp(18px, 2vw, 20px);
+            line-height: 1.6;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Flyer Image */
+        .flyer-image {
+            border-radius: var(--border-radius-medium);
+            box-shadow: 0 0 15px rgba(0, 255, 213, 0.8), 0 0 25px rgba(255, 153, 0, 0.5);
+            display: block;
+            height: auto;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        /* YouTube Video */
+        .miami-video-container {
+            aspect-ratio: 16 / 9;
+            border-radius: var(--border-radius-medium);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            margin: 60px auto;
+            overflow: hidden;
+        }
+
+        .miami-video-container iframe {
+            border: none;
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Spotify Embed */
+        .spotify-embed {
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(0, 255, 213, 0.2));
+            border-radius: var(--border-radius-medium);
+            box-shadow: 0 0 20px rgba(255, 153, 0, 0.6);
+            margin: 60px auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .spotify-title {
+            animation: gradientText 8s ease infinite;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            background-size: 200% auto;
+            color: var(--white);
+            font-size: clamp(28px, 3vw, 36px);
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Instagram Embed */
+        .instagram-embed-container {
+            margin: 60px auto;
+        }
+
+        .instagram-feed {
+            border-radius: var(--border-radius-medium);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            overflow: hidden;
+        }
+
+        .instagram-feed iframe {
+            border: none;
+            display: block;
+            height: 600px;
+            width: 100%;
+        }
+
+        /* Upcoming Shows */
+        .upcoming-events-container {
+            background: linear-gradient(135deg, #ff7e5f, #ff5cad);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            margin: 60px auto;
+            max-width: 1000px;
+            padding: 40px;
+        }
+
+        .upcoming-events-title {
+            color: var(--white);
+            font-size: clamp(32px, 4vw, 42px);
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            text-align: center;
+        }
+
+        .upcoming-events-title::after {
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+            bottom: -10px;
+            content: '';
+            height: 4px;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            width: 100px;
+        }
+
+        .upcoming-events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .event-item {
+            align-items: center;
+            animation: fadeIn 0.5s ease forwards;
+            background: rgba(255, 255, 255, 0.15);
+            background-clip: padding-box;
+            border: 1px solid transparent;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            opacity: 0;
+            padding: 15px 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event-item:hover,
+        .event-item:focus-within {
+            border: 1px solid var(--secondary-color);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.02);
+        }
+
+        .event-item:nth-child(1) { animation-delay: 0.1s; }
+        .event-item:nth-child(2) { animation-delay: 0.2s; }
+        .event-item:nth-child(3) { animation-delay: 0.3s; }
+        .event-item:nth-child(4) { animation-delay: 0.4s; }
+        .event-item:nth-child(5) { animation-delay: 0.5s; }
+
+        .event-details {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .event-date {
+            align-items: center;
+            color: var(--white);
+            display: flex;
+            font-size: 16px;
+            font-weight: bold;
+            gap: 8px;
+            text-transform: uppercase;
+        }
+
+        .event-name {
+            align-items: center;
+            color: var(--white);
+            display: flex;
+            font-size: 18px;
+            font-weight: bold;
+            gap: 8px;
+            margin: 5px 0;
+        }
+
+        .event-location {
+            align-items: center;
+            color: var(--white);
+            display: flex;
+            font-size: 14px;
+            gap: 8px;
+            opacity: 0.9;
+        }
+
+        .event-icon {
+            color: var(--secondary-color);
+            font-size: 14px;
+        }
+
+        .event-actions {
+            align-items: center;
+            display: flex;
+            gap: 10px;
+        }
+
+        .event-button {
+            background: var(--white);
+            border: 2px solid var(--white);
+            border-radius: 30px;
+            box-shadow: var(--box-shadow-secondary);
+            color: var(--primary-color);
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 8px 20px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: var(--transition-standard);
+            width: 120px;
+        }
+
+        .event-button:hover,
+        .event-button:focus {
+            background: var(--primary-color);
+            border-color: var(--white);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            color: var(--white);
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        /* Media Section */
+        .video-highlight-container {
+            background: linear-gradient(135deg, rgba(255, 126, 95, 0.2), rgba(255, 92, 173, 0.2));
+            border-radius: var(--border-radius-large);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            margin: 60px auto;
+            max-width: 1200px;
+            padding: 40px;
+        }
+
+        .video-highlight-title {
+            color: var(--white);
+            font-size: clamp(34px, 4vw, 44px);
+            font-weight: 600;
+            margin-bottom: 40px;
+            position: relative;
+            text-align: center;
+        }
+
+        .video-highlight-title::after {
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+            bottom: -15px;
+            content: '';
+            height: 3px;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            width: 80px;
+        }
+
+        .video-highlight-grid {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            margin-top: 30px;
+        }
+
+        .video-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: var(--border-radius-medium);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover,
+        .video-card:focus-within {
+            transform: translateY(-5px);
+        }
+
+        .video-card iframe {
+            border: none;
+            display: block;
+            height: 200px;
+            width: 100%;
+        }
+
+        .view-all-videos {
+            background: var(--white);
+            border: 2px solid var(--white);
+            border-radius: 30px;
+            box-shadow: var(--box-shadow-secondary);
+            color: var(--primary-color);
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 30px;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: var(--transition-standard);
+        }
+
+        .view-all-videos:hover,
+        .view-all-videos:focus {
+            background: var(--primary-color);
+            border-color: var(--white);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            color: var(--white);
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        /* Sponsors Section */
+        .sponsors-container {
+            background: linear-gradient(135deg, #e94c9e, #8764bb, #56a0d3);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            margin: 60px auto;
+            max-width: 1200px;
+            padding: 60px 40px;
+            position: relative;
+        }
+
+        .sponsors-title {
+            color: var(--white);
+            font-size: clamp(34px, 4vw, 44px);
+            font-weight: 600;
+            margin-bottom: 40px;
+            position: relative;
+            text-align: center;
+        }
+
+        .sponsors-title::after {
+            background-color: #ffe066;
+            border-radius: 2px;
+            bottom: -15px;
+            content: '';
+            height: 3px;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            width: 80px;
+        }
+
+        .sponsors-grid {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            max-width: 1100px;
+        }
+
+        .sponsor-item {
+            align-items: center;
+            background: var(--white);
+            border-radius: var(--border-radius-medium);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            height: 200px;
+            justify-content: center;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .sponsor-item:hover,
+        .sponsor-item:focus-within {
+            transform: translateY(-10px);
+        }
+
+        .sponsor-logo {
+            max-height: 120px;
+            max-width: 85%;
+            object-fit: contain;
+        }
+
+        .sponsor-cta {
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin-top: 80px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .sponsor-cta p {
+            color: var(--white);
+            font-size: clamp(24px, 3vw, 28px);
+            margin-bottom: 25px;
+        }
+
+        .contact-button {
+            background: var(--white);
+            border: 2px solid var(--white);
+            border-radius: 30px;
+            box-shadow: var(--box-shadow-secondary);
+            color: var(--primary-color);
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: var(--transition-standard);
+        }
+
+        .contact-button:hover,
+        .contact-button:focus {
+            background: var(--primary-color);
+            border-color: var(--white);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            color: var(--white);
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        /* Bottom Icon */
+        .bottom-icon-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .bottom-icon {
+            filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 1));
+            height: auto;
+            max-width: 120px;
+            transition: transform 0.5s ease;
+        }
+
+        .bottom-icon:hover,
+        .bottom-icon:focus {
+            transform: rotate(360deg);
+        }
+
+        /* Footer */
+        .miami-footer {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: var(--border-radius-small);
+            color: var(--white);
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover,
+        .contact-info a:focus {
+            color: var(--secondary-color);
+            outline: none;
+        }
+
+        .social-links {
+            margin: 10px 0;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            background: var(--primary-color);
+            border: none;
+            border-radius: 50%;
+            bottom: 20px;
+            color: var(--white);
+            cursor: pointer;
+            font-size: 20px;
+            height: 40px;
+            opacity: 0;
+            position: fixed;
+            right: 20px;
+            transition: opacity 0.3s ease;
+            width: 40px;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .sticky-header-content {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
+
+            .countdown-wrapper {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .miami-section {
+                margin: 20px auto;
+                padding: 30px 20px;
+            }
+
+            .sticky-header-content {
+                padding: 8px 15px;
+            }
+
+            .swim-week-text {
+                font-size: 16px;
+            }
+
+            .sticky-countdown {
+                font-size: 16px;
+                padding: 6px 10px;
+            }
+
+            .sticky-cta-buttons {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .miami-button {
+                font-size: 16px;
+                margin-bottom: 20px;
+                padding: 12px 20px;
+                width: 280px;
+            }
+
+            .intro-message p {
+                font-size: 18px;
+            }
+
+            .flyer-image {
+                max-width: 400px;
+            }
+
+            .spotify-title {
+                font-size: 28px;
+                letter-spacing: 1px;
+            }
+
+            .upcoming-events-title,
+            .sponsors-title,
+            .video-highlight-title {
+                font-size: 28px;
+            }
+
+            .instagram-feed iframe {
+                height: 450px;
+            }
+
+            .sponsor-item {
+                height: 140px;
+                padding: 15px;
+            }
+
+            .video-card iframe {
+                height: 180px; /* Increased height for mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .miami-logo {
+                max-width: 200px;
+            }
+
+            .miami-button,
+            .sticky-cta-button,
+            .event-button,
+            .contact-button,
+            .view-all-videos {
+                font-size: 14px;
+                padding: 8px 15px;
+                width: 100%;
+            }
+
+            .flyer-image {
+                max-width: 300px;
+            }
+
+            .sponsor-cta p {
+                font-size: 22px;
+            }
+
+            .event-name {
+                font-size: 16px;
+            }
+
+            .event-date {
+                font-size: 14px;
+            }
+
+            .upcoming-events-container,
+            .sponsors-container,
+            .video-highlight-container {
+                padding: 30px 15px;
+            }
+
+            .button-container {
+                gap: 10px;
+            }
+
+            .video-card iframe {
+                height: 150px; /* Increased height for smaller mobile screens */
+            }
+
+            .event-actions {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="miami-section">
+        <!-- Sticky Header -->
+        <header class="sticky-header" role="banner">
+            <div class="sticky-header-content">
+                <img src="/images/swim-white-logo.png"
+                     alt="NY Fashion Week Show Logo"
+                     class="sticky-logo"
+                     loading="lazy"
+                     decoding="async">
+                <div class="countdown-wrapper">
+                    <span class="swim-week-text">NY Fashion Week Show</span>
+                    <div class="sticky-countdown" id="countdown" aria-live="polite">
+                        <span id="countdown-days">00</span>D
+                        <span id="countdown-hours">00</span>H
+                        <span id="countdown-minutes">00</span>M
+                    </div>
+                </div>
+                <div class="sticky-cta-buttons">
+                    <a href="https://www.examodels.com/tickets" target="_blank" rel="noopener" class="sticky-cta-button" aria-label="Purchase tickets for NY Fashion Week Show">Tickets</a>
+                    <a href="https://www.examodels.com/swim" target="_blank" rel="noopener" class="sticky-cta-button outline" aria-label="Shop NY Fashion Week Show merchandise">Shop</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Logo -->
+        <img src="/images/swim-white-logo.png"
+             alt="NY Fashion Week Show Logo"
+             class="miami-logo"
+             loading="lazy"
+             decoding="async">
+
+        <!-- Buttons -->
+        <nav class="button-container" role="navigation">
+            <a href="https://www.examodels.com/swimmodel" target="_blank" rel="noopener" class="miami-button bounce" aria-label="Apply to model at NY Fashion Week Show">Model Submission</a>
+            <a href="https://www.examodels.com/swimdesigner" target="_blank" rel="noopener" class="miami-button" aria-label="Apply as a designer for NY Fashion Week Show">Designer Application</a>
+            <a href="https://www.examodels.com/swimmedia" target="_blank" rel="noopener" class="miami-button" aria-label="Request media passes for NY Fashion Week Show">Media Passes</a>
+            <a href="https://www.examodels.com/swim" target="_blank" rel="noopener" class="miami-button" aria-label="View Swimwear Collection">Swimwear Collection</a>
+            <a href="https://www.examodels.com/swim-magazine" target="_blank" rel="noopener" class="miami-button" aria-label="Visit Swim Magazine">Swim Magazine</a>
+        </nav>
+
+        <!-- Intro Message -->
+        <div class="intro-message">
+            <p>🔥Experience the hottest Swim Shows!🔥 Featuring the World's Top Models showcasing global Swimwear Brands.</p>
+        </div>
+
+        <!-- Flyer Image -->
+        <img src="/images/swim-shows-flyer.jpg"
+             alt="Swim Shows Main Flyer"
+             class="flyer-image"
+             loading="lazy"
+             decoding="async">
+
+        <!-- YouTube Video -->
+        <div class="miami-video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/lYzSnPZ-peE?si=w4yCMsxUEOZJrlVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- Spotify Playlist -->
+        <div class="spotify-embed">
+            <h2 class="spotify-title">EXA SWIM PLAYLIST</h2>
+            <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/playlist/2ECDbEnuIzJYlQMrxnimay?utm_source=generator&theme=0"
+                    width="100%"
+                    height="152"
+                    frameBorder="0"
+                    allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                    title="EXA SWIM Playlist"></iframe>
+        </div>
+
+        <!-- Instagram Embed -->
+        <div class="instagram-embed-container">
+            <div class="instagram-feed">
+                <iframe
+                    src="https://www.instagram.com/swim.shows/embed"
+                    loading="lazy"
+                    allowtransparency="true"
+                    title="NY Fashion Week Show Instagram Feed"></iframe>
+            </div>
+        </div>
+
+        <!-- Upcoming Shows -->
+        <div class="upcoming-events-container">
+            <h2 class="upcoming-events-title">Upcoming Shows</h2>
+
+            <div class="upcoming-events-list" role="list">
+                <!-- New York Fashion Week -->
+                <div class="event-item" role="listitem" data-location="New York">
+                    <div class="event-details">
+                        <span class="event-date"><i class="fas fa-calendar-alt event-icon" aria-hidden="true"></i> September 10, 2025</span>
+                        <span class="event-name"><i class="fas fa-star event-icon" aria-hidden="true"></i> NY Fashion Week Show</span>
+                        <span class="event-location"><i class="fas fa-map-marker-alt event-icon" aria-hidden="true"></i> New York, NY</span>
+                    </div>
+                    <div class="event-actions">
+                        <a href="https://www.examodels.com/tickets" target="_blank" rel="noopener" class="event-button" aria-label="Get tickets for NY Fashion Week Show">Tickets</a>
+                    </div>
+                </div>
+
+                <!-- San Diego -->
+                <div class="event-item" role="listitem" data-location="San Diego">
+                    <div class="event-details">
+                        <span class="event-date"><i class="fas fa-calendar-alt event-icon" aria-hidden="true"></i> October 17, 2025</span>
+                        <span class="event-name"><i class="fas fa-tshirt event-icon" aria-hidden="true"></i> Swim Show</span>
+                        <span class="event-location"><i class="fas fa-map-marker-alt event-icon" aria-hidden="true"></i> San Diego, CA</span>
+                    </div>
+                    <div class="event-actions">
+                        <a href="https://www.examodels.com/tickets" target="_blank" rel="noopener" class="event-button" aria-label="Get tickets for San Diego Swim Show">Tickets</a>
+                    </div>
+                </div>
+
+                <!-- Scottsdale -->
+                <div class="event-item" role="listitem" data-location="Scottsdale">
+                    <div class="event-details">
+                        <span class="event-date"><i class="fas fa-calendar-alt event-icon" aria-hidden="true"></i> October 28, 2025</span>
+                        <span class="event-name"><i class="fas fa-tshirt event-icon" aria-hidden="true"></i> Swim Show</span>
+                        <span class="event-location"><i class="fas fa-map-marker-alt event-icon" aria-hidden="true"></i> Scottsdale, AZ</span>
+                    </div>
+                    <div class="event-actions">
+                        <a href="https://www.examodels.com/tickets" target="_blank" rel="noopener" class="event-button" aria-label="Get tickets for Scottsdale Swim Show">Tickets</a>
+                    </div>
+                </div>
+
+                <!-- Art Basel Miami -->
+                <div class="event-item" role="listitem" data-location="Miami">
+                    <div class="event-details">
+                        <span class="event-date"><i class="fas fa-calendar-alt event-icon" aria-hidden="true"></i> December 4, 2025</span>
+                        <span class="event-name"><i class="fas fa-star event-icon" aria-hidden="true"></i> Art Basel Miami</span>
+                        <span class="event-location"><i class="fas fa-map-marker-alt event-icon" aria-hidden="true"></i> Miami, FL</span>
+                    </div>
+                    <div class="event-actions">
+                        <a href="https://www.examodels.com/tickets" target="_blank" rel="noopener" class="event-button" aria-label="Get tickets for Art Basel Miami">Tickets</a>
+                    </div>
+                </div>
+
+                <!-- Miami Swim Week -->
+                <div class="event-item" role="listitem" data-location="Miami">
+                    <div class="event-details">
+                        <span class="event-date"><i class="fas fa-calendar-alt event-icon" aria-hidden="true"></i> May 27 & 28, 2026</span>
+                        <span class="event-name"><i class="fas fa-glass-cheers event-icon" aria-hidden="true"></i> Miami Swim Week</span>
+                        <span class="event-location"><i class="fas fa-map-marker-alt event-icon" aria-hidden="true"></i> Miami, FL</span>
+                    </div>
+                    <div class="event-actions">
+                        <a href="https://www.examodels.com/tickets" target="_blank" rel="noopener" class="event-button" aria-label="Get tickets for Miami Swim Week">Tickets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Media Section -->
+        <div class="video-highlight-container">
+            <h2 class="video-highlight-title">Media</h2>
+            <div class="video-highlight-grid">
+                <div class="video-card">
+                    <iframe
+                        src="https://www.youtube.com/embed/Iu68o0MCuvw"
+                        title="Media Video 1"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe
+                        src="https://www.youtube.com/embed/W_Xs6vpeBjo"
+                        title="Media Video 2"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe
+                        src="https://www.youtube.com/embed/QP7h6dc9YTc"
+                        title="Media Video 3"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe
+                        src="https://www.youtube.com/embed/9JDS57YIyb0"
+                        title="Media Video 4"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <a href="https://www.examodels.com/videos" target="_blank" rel="noopener" class="view-all-videos" aria-label="View all NY Fashion Week Show media">View All Media</a>
+        </div>
+
+        <!-- Sponsors Section -->
+        <div class="sponsors-container">
+            <h2 class="sponsors-title">Sponsors & Partners</h2>
+            <div class="sponsors-grid">
+                <div class="sponsor-item">
+                    <img src="/images/exa-black-logo.png"
+                         alt="EXA Logo"
+                         class="sponsor-logo"
+                         loading="lazy"
+                         decoding="async">
+                </div>
+                <div class="sponsor-item">
+                    <img src="/images/digis-white-logo.png"
+                         alt="Digis Logo"
+                         class="sponsor-logo"
+                         loading="lazy"
+                         decoding="async">
+                </div>
+                <div class="sponsor-item">
+                    <img src="https://madhippie.com/cdn/shop/files/Mad_Hippie_Logo_-_2023.png?v=1692145852&width=428"
+                         alt="Mad Hippie Logo"
+                         class="sponsor-logo"
+                         loading="lazy"
+                         decoding="async">
+                </div>
+            </div>
+
+            <div class="sponsor-cta" id="contact">
+                <p>Interested in becoming a sponsor?</p>
+                <a href="mailto:team@examodels.com" class="contact-button" aria-label="Contact us to become a sponsor">Contact Us</a>
+            </div>
+        </div>
+
+        <!-- Bottom Icon -->
+        <div class="bottom-icon-container">
+            <img src="/images/swim-color-icon.png"
+                 alt="Swim Icon"
+                 class="bottom-icon"
+                 loading="lazy"
+                 decoding="async">
+        </div>
+
+        <!-- Footer -->
+        <footer class="miami-footer">
+            <div class="contact-info">CONTACT: <a href="mailto:team@examodels.com">TEAM@EXAMODELS.COM</a></div>
+            <div class="social-links">
+                <a href="https://instagram.com/swim.shows" target="_blank" rel="noopener" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/examodels" target="_blank" rel="noopener" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="copyright">© 2025 Swim Shows by EXA Models | All Rights Reserved</div>
+        </footer>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "NY Fashion Week Show 2025",
+        "description": "Experience the hottest Swim Shows, featuring global swimwear designers and top models.",
+        "startDate": "2025-09-10",
+        "endDate": "2025-09-10",
+        "location": {
+            "@type": "Place",
+            "name": "New York",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "New York",
+                "addressRegion": "NY",
+                "addressCountry": "US"
+            }
+        },
+        "image": "/images/swim-shows-flyer.jpg",
+        "organizer": {
+            "@type": "Organization",
+            "name": "EXA Models",
+            "url": "https://www.examodels.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://www.examodels.com/tickets",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+
+    <script>
+        // Countdown Timer
+        document.addEventListener('DOMContentLoaded', () => {
+            const targetDate = new Date('2025-09-10T15:00:00-04:00').getTime();
+            const countdownElement = document.getElementById('countdown');
+            if (!countdownElement) return;
+
+            const updateCountdown = () => {
+                const now = new Date().getTime();
+                const timeRemaining = targetDate - now;
+
+                if (timeRemaining < 0) {
+                    clearInterval(countdownTimer);
+                    countdownElement.textContent = 'Event has started!';
+                    return;
+                }
+
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+
+                document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+            };
+
+            const countdownTimer = setInterval(updateCountdown, 60000); // Update every minute
+            updateCountdown();
+
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = anchor.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Sticky Header Scroll Effect
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('.sticky-header');
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // Back to Top Button
+            const backToTop = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', () => {
+                backToTop.classList.toggle('visible', window.scrollY > 300);
+            });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

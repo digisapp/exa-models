@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Designer Registration for Miami Swim Shows - Showcase your swimwear collection during Swim Week Miami 2025.">
+    <title>Miami Swim Shows - Designer Registration</title>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+    <style>
+        :root {
+            --primary-color: #ff007f;    /* Electric Hot Pink - Main Color */
+            --secondary-color: #ffcc00;  /* Flaming Gold */
+            --accent-color: #00ffcc;     /* Neon Turquoise */
+            --tertiary-color: #ff3366;   /* Coral Red */
+            --white: #ffffff;
+            --shadow-glow: 0 0 20px rgba(255, 0, 127, 0.6), 0 0 30px rgba(255, 51, 102, 0.5);
+            --shadow-soft: 0 4px 15px rgba(0, 255, 204, 0.4);
+            --border-radius-large: 20px;
+            --border-radius-medium: 15px;
+            --border-radius-small: 10px;
+            --transition-standard: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background-color: #fff5e6; /* Light peachy background */
+            overflow-x: hidden;
+        }
+
+        .miami-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--tertiary-color), var(--accent-color));
+            background-size: 300% 300%;
+            border-radius: var(--border-radius-large);
+            box-shadow: var(--shadow-glow);
+            animation: gradientBG 12s ease infinite;
+            position: relative;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-standard);
+            border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
+            margin-bottom: 30px;
+        }
+
+        .sticky-header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sticky-logo {
+            height: 40px;
+            width: auto;
+            filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+        }
+
+        .sticky-cta-button {
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 16px;
+            transition: var(--transition-standard);
+            background: var(--white);
+            color: var(--primary-color);
+            box-shadow: var(--shadow-soft);
+            border: 2px solid var(--white);
+        }
+
+        .sticky-cta-button:hover,
+        .sticky-cta-button:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 127, 0.6);
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--accent-color);
+        }
+
+        .miami-logo {
+            max-width: 250px;
+            height: auto;
+            filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.9));
+            margin: 40px auto 20px;
+            display: block;
+        }
+
+        .designer-title {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--white);
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
+        }
+
+        .event-dates {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+        }
+
+        .welcome-message {
+            margin: 0 auto 40px;
+            max-width: 800px;
+            padding: 25px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-medium);
+            text-align: center;
+            font-size: 18px;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+            color: var(--white);
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+        }
+
+        .featured-image-container {
+            margin: 35px 0;
+            border-radius: var(--border-radius-medium);
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(255, 0, 127, 0.5);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .featured-image:hover {
+            transform: scale(1.03);
+        }
+
+        .section-container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 45px auto;
+            background: linear-gradient(135deg, var(--tertiary-color), var(--accent-color));
+            border-radius: 25px;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            text-shadow: 0 0 10px rgba(255, 51, 102, 0.6);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover,
+        .card:focus-within {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 0, 127, 0.5);
+        }
+
+        .card.featured {
+            border: 2px solid var(--primary-color);
+        }
+
+        .card.premium {
+            border: 2px solid var(--tertiary-color);
+        }
+
+        .card.special {
+            border: 2px solid var(--accent-color);
+        }
+
+        .card-header {
+            background: linear-gradient(90deg, var(--accent-color), var(--tertiary-color));
+            color: var(--white);
+            padding: 15px;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-title {
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+        }
+
+        .card-info {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 17px;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        .limited-spots {
+            color: var(--secondary-color);
+            font-style: italic;
+            font-size: 0.9em;
+            text-shadow: 0 0 3px rgba(255, 204, 0, 0.3);
+        }
+
+        .package-price {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            color: var(--white);
+            text-shadow: 0 0 5px rgba(255, 204, 0, 0.4);
+        }
+
+        .action-button {
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 16px;
+            transition: var(--transition-standard);
+            text-align: center;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            color: var(--white);
+            box-shadow: var(--shadow-soft);
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .action-button:hover,
+        .action-button:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 255, 204, 0.6);
+            background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+            color: var(--white);
+        }
+
+        .package-details {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: var(--border-radius-medium);
+            margin-top: 30px;
+            box-shadow: 0 0 15px rgba(255, 51, 102, 0.4);
+            color: var(--white);
+        }
+
+        .package-details h3 {
+            color: var(--white);
+            font-size: 26px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px rgba(255, 0, 127, 0.5);
+        }
+
+        .package-details ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        .package-details img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-medium);
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .package-details img:hover {
+            transform: scale(1.02);
+        }
+
+        .video-container {
+            margin: 45px auto;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--tertiary-color), var(--accent-color));
+            border-radius: 25px;
+            box-shadow: var(--shadow-glow);
+            max-width: 1000px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: var(--border-radius-medium);
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .video-item:hover iframe {
+            transform: scale(1.03);
+        }
+
+        .gallery-container {
+            padding: 40px;
+            margin: 45px auto;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 25px;
+            box-shadow: var(--shadow-glow);
+            max-width: 1000px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: var(--border-radius-medium);
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sponsors-container {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 45px auto;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color), var(--tertiary-color));
+            border-radius: 20px;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .sponsor-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            padding: 30px;
+            background: var(--white);
+            border-radius: var(--border-radius-medium);
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease;
+        }
+
+        .sponsor-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 255, 204, 0.6);
+        }
+
+        .sponsor-logo {
+            max-width: 85%;
+            max-height: 120px;
+            object-fit: contain;
+        }
+
+        .sponsor-cta {
+            margin-top: 40px;
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+        }
+
+        .sponsor-cta p {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: var(--white);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+        }
+
+        .contact-button {
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 18px;
+            transition: var(--transition-standard);
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            color: var(--white);
+            box-shadow: var(--shadow-soft);
+            text-transform: uppercase;
+        }
+
+        .contact-button:hover,
+        .contact-button:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+        }
+
+        .miami-footer {
+            margin-top: 40px;
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--white);
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.2), rgba(255, 51, 102, 0.2));
+            border-radius: var(--border-radius-small);
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+        }
+
+        .footer-links {
+            margin-bottom: 30px;
+        }
+
+        .footer-links h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-links li {
+            margin: 0;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 16px;
+            transition: var(--transition-standard);
+            text-shadow: 0 0 3px rgba(255, 0, 127, 0.5);
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus {
+            color: var(--accent-color);
+            text-shadow: 0 0 5px rgba(0, 255, 204, 0.6);
+        }
+
+        .contact-info {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+            text-shadow: 0 0 3px rgba(255, 0, 127, 0.5);
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+            text-shadow: 0 0 5px rgba(0, 255, 204, 0.6);
+        }
+
+        .copyright {
+            margin-top: 10px;
+            font-size: 14px;
+            opacity: 0.9;
+            color: var(--white);
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+        }
+
+        @media (max-width: 992px) {
+            .sticky-header-content {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .miami-section {
+                padding: 30px 20px;
+                margin: 20px auto;
+            }
+
+            .designer-title {
+                font-size: 32px;
+            }
+
+            .event-dates {
+                font-size: 18px;
+            }
+
+            .welcome-message {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .footer-links ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .miami-logo {
+                max-width: 200px;
+            }
+
+            .section-container,
+            .video-container,
+            .gallery-container {
+                padding: 30px 15px;
+            }
+
+            .card-title {
+                font-size: 20px;
+            }
+
+            .card-header {
+                font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="miami-section">
+        <header class="sticky-header">
+            <div class="sticky-header-content">
+                <img src="/images/swim-white-logo.png"
+                     alt="Miami Swim Week Logo"
+                     class="sticky-logo">
+                <a href="https://www.examodels.com/swim" target="_blank" rel="noopener" class="sticky-cta-button">Back to Home</a>
+            </div>
+        </header>
+
+        <img src="/images/swim-white-logo.png"
+             alt="Swim Week Logo"
+             class="miami-logo">
+        <h1 class="designer-title">Brand Opportunity</h1>
+        <p class="event-dates">Swim Week Miami May 26 - June 1 2025</p>
+        <div class="welcome-message">
+            <p>Swim Week Miami is the leading showcase for swimwear and lifestyle brands. This is your opportunity to showcase your brand in front of influencers, models, fashion lovers, consumer buyers, industry leaders, and media. Be part of an amazing week filled with exciting experiences!</p>
+        </div>
+
+        <div class="featured-image-container">
+            <img src="/images/event-model-runway10.JPG"
+                 alt="Swim Week Miami Fashion Show"
+                 class="featured-image"
+                 loading="lazy">
+        </div>
+
+        <div class="section-container" id="designer-shows">
+            <h2 class="section-title">Designer Show Options</h2>
+            <div class="section-grid">
+                <div class="card featured">
+                    <div class="card-header">May 28</div>
+                    <div class="card-content">
+                        <div class="card-title">Opening Show</div>
+                        <div class="card-info"><strong>Location:</strong> 101 Ocean Drive</div>
+                        <div class="card-info">Select 15 Models</div>
+                        <div class="card-info">+ Attend Casting Call May 26th</div>
+                        <div class="card-info">+ Private Model Fittings May 27th</div>
+                        <div class="package-price"><strong>Price:</strong> $4,500</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">May 29</div>
+                    <div class="card-content">
+                        <div class="card-title">Show Day 2</div>
+                        <div class="card-info"><strong>Location:</strong> 101 Ocean Drive</div>
+                        <div class="card-info">15 Models</div>
+                        <div class="package-price"><strong>Price:</strong> Early Bird $2,500 (May 1st increase to $3,500)</div>
+                    </div>
+                </div>
+                <div class="card premium">
+                    <div class="card-header">May 28</div>
+                    <div class="card-content">
+                        <div class="card-title">Opening Show Luxe</div>
+                        <div class="card-info"><strong>Location:</strong> 101 Ocean Drive</div>
+                        <div class="card-info">Select 25 Models</div>
+                        <div class="card-info">+ Attend Casting Call May 26th</div>
+                        <div class="card-info">+ Private Model Fittings May 27th</div>
+                        <div class="package-price"><strong>Price:</strong> $6,000</div>
+                    </div>
+                </div>
+                <div class="card special">
+                    <div class="card-header">May 31</div>
+                    <div class="card-content">
+                        <div class="card-title">Daytime Show</div>
+                        <div class="card-info"><strong>Location:</strong> 101 Ocean Drive</div>
+                        <div class="card-info">Includes 15 Models <span class="limited-spots">*Limited Spots</span></div>
+                        <div class="package-price"><strong>Price:</strong> $1,600</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="package-details">
+                <h3>What's Included:</h3>
+                <ul>
+                    <li>15 Models will showcase your swimwear collection on the runway</li>
+                    <li>Media coverage by leading photographers and videographers</li>
+                    <li>If you're unable to attend, our dedicated team will represent your brand</li>
+                </ul>
+                <h3>Initial Deposit</h3>
+                <p>Secure your spot by paying a deposit of $500.</p>
+                <a href="https://buy.stripe.com/3cscNSe39gnn00g5lq" class="action-button">Pay Deposit</a>
+            </div>
+        </div>
+
+        <div class="section-container" id="pop-up-options">
+            <h2 class="section-title">Pop-Up Options</h2>
+            <div class="section-grid">
+                <div class="card special">
+                    <div class="card-header">May 26–June 1</div>
+                    <div class="card-content">
+                        <div class="card-title">Beach Club Pop-Up</div>
+                        <div class="card-info"><strong>Location:</strong> 1st & Ocean Miami Beach</div>
+                        <div class="card-info">1 or 7 Day Options</div>
+                        <div class="card-info">Branded Booth + Influencer Activations <span class="limited-spots">*Limited Spots</span></div>
+                        <div class="package-price"><strong>Price:</strong> $6,000 One Day / $28,000 Week</div>
+                        <div class="card-info"><em>*Turn Key All Included + Staff</em></div>
+                    </div>
+                </div>
+                <div class="card special">
+                    <div class="card-header">May 26–June 1</div>
+                    <div class="card-content">
+                        <div class="card-title">Swim Shop Pop-Up</div>
+                        <div class="card-info"><strong>Location:</strong> 101 Ocean Drive Retail Shop</div>
+                        <div class="card-info">7 Day Shop</div>
+                        <div class="card-info">Retail Space + Influencer Activations <span class="limited-spots">*Limited Spots</span></div>
+                        <div class="package-price"><strong>Price:</strong> $3,500 Shared Shop / $18,000 Full Shop</div>
+                        <div class="card-info"><em>*Turn Key All Included + Staff</em></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="package-details">
+                <h3>Beach Club Pop-Up</h3>
+                <p>Picture your brand at our breathtaking beachfront Beach Club during Miami Swim Week. With blue-and-white striped umbrellas, golden sand, and turquoise waves, this chic setting is perfect for a branded pop-up booth and full event setup on the beach. Choose a one-day activation or the full 7-day event to captivate influencers and fashion enthusiasts.</p>
+                <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/cc924cc4-2763-4eed-bc15-40c71982c642/SC+1.jpg?format=1000w"
+                     alt="Beach Club Pop-Up Scene 1"
+                     loading="lazy">
+                <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/2a689c80-c2cb-4a00-8cdd-2a34628854ee/BC+1.JPG?format=1000w"
+                     alt="Beach Club Pop-Up Scene 2"
+                     loading="lazy">
+                <h3>Activation Ideas:</h3>
+                <ul>
+                    <li><strong>Branded Booth:</strong> Interactive retail hub with photo ops</li>
+                    <li><strong>Morning Yoga:</strong> Sunrise session with influencers using your products.</li>
+                    <li><strong>Beach Party:</strong> DJ, drinks, bites, and a "Style Lounge" featuring your brand.</li>
+                    <li><strong>Product Launch:</strong> Mini runway show or event on the beach.</li>
+                </ul>
+            </div>
+
+            <div class="package-details">
+                <h3>Swim Shop Pop-Up (7 Day)</h3>
+                <p>Located in the hottest Swim Week location! A Swim premium retail space during Miami Swim Week. This upscale indoor setting is ideal for selling your products and engaging with models, influencers, and consumers.</p>
+                <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/c575ffbc-0859-46ba-8c48-23ec98393027/Swim+Shop+Deck.png?format=1000w"
+                     alt="Swim Shop Pop-Up Deck"
+                     loading="lazy">
+                <h3>Activation Concepts:</h3>
+                <ul>
+                    <li>Engaging and interactive Swim Shop Activation experience, Product Unveiling, Photo Sessions, Content Creation Day – with complete creative control in your hands!</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="video-container" id="highlights">
+            <h2 class="section-title">Show Highlights</h2>
+            <div class="video-grid">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/Iu68o0MCuvw"
+                            title="EXA Swim Week - Miami Beach Runway Show"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/W_Xs6vpeBjo"
+                            title="Swim Week Designer Showcase - Behind the Scenes"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/QP7h6dc9YTc"
+                            title="EXA Models - Swim Collection Highlights"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/9JDS57YIyb0"
+                            title="EXA Swim Week - Additional Highlights"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-container" id="gallery">
+            <h2 class="section-title">Photo Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/20cfa36a-3d85-4198-bb50-a43ae3aecef3/IMG_6215.jpg?format=750w"
+                         alt="Models walking runway at Swim Week Miami"
+                         class="gallery-image"
+                         loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/044d10c5-bac0-40d0-a3ba-70a276e784c5/DSCF7088-Enhanced-NR-1.jpg?format=750w"
+                         alt="Swimwear model on runway"
+                         class="gallery-image"
+                         loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/03bab05c-54d0-42e2-92fa-769fcfe9e7be/DSC08135.jpg?format=750w"
+                         alt="Designer collection showcase"
+                         class="gallery-image"
+                         loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/fa228fda-9642-4d92-94de-63d8eaf59e2b/Screenshot+2025-02-25+at+5.52.29%E2%80%AFPM.png?format=750w"
+                         alt="Swim Week promotional image"
+                         class="gallery-image"
+                         loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/57e9e29e-17ed-4c45-b7f1-d24cbc9e1aa1/IMG_6207.jpg?format=750w"
+                         alt="Models posing at Swim Week event"
+                         class="gallery-image"
+                         loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/b3ea2ec0-c2f4-41bd-8d0b-eb0cb23330f5/IMG_6671.jpg?format=750w"
+                         alt="Swimwear collection on model"
+                         class="gallery-image"
+                         loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/287def71-7971-455f-9d06-1094912e82f9/IMG_6217.jpg?format=750w"
+                         alt="Fashion show audience at Swim Week"
+                         class="gallery-image"
+                         loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/00821e54-ded3-45b5-a108-4628996ccd52/Screenshot+2025-02-25+at+5.35.09%E2%80%AFPM.png?format=750w"
+                         alt="Designer brand showcase at Miami Swim Week"
+                         class="gallery-image"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <div class="sponsors-container" id="sponsors">
+            <h2 class="section-title">Sponsors & Partners</h2>
+            <div class="sponsors-grid">
+                <div class="sponsor-item">
+                    <img src="/images/exa-black-logo.png"
+                         alt="EXA Logo"
+                         class="sponsor-logo"
+                         loading="lazy">
+                </div>
+                <div class="sponsor-item">
+                    <img src="/images/digis-black-logo.png"
+                         alt="Digis Logo"
+                         class="sponsor-logo"
+                         loading="lazy">
+                </div>
+                <div class="sponsor-item">
+                    <img src="/images/madhippie-logo.png"
+                         alt="Mad Hippie Logo"
+                         class="sponsor-logo"
+                         loading="lazy">
+                </div>
+            </div>
+            <div class="sponsor-cta">
+                <p>Interested in becoming a sponsor?</p>
+                <a href="mailto:team@examodels.com" class="contact-button">Contact Us</a>
+            </div>
+        </div>
+
+        <footer class="miami-footer" id="contact">
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#designer-shows">Designer Show Options</a></li>
+                    <li><a href="#pop-up-options">Pop-Up Options</a></li>
+                    <li><a href="#highlights">Show Highlights</a></li>
+                    <li><a href="#gallery">Photo Gallery</a></li>
+                    <li><a href="#sponsors">Sponsors & Partners</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="contact-info">CONTACT: <a href="mailto:team@examodels.com">TEAM@EXAMODELS.COM</a> | <a href="tel:+15615737510">(561) 573-7510</a></div>
+            <div class="copyright">© 2025 Swim Shows by EXA Models | All Rights Reserved</div>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = anchor.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

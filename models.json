@@ -2,9 +2,13 @@
   {
     "id": "miriam",
     "name": "Miriam Haase",
-    "photo": "https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/20bcd834-11b6-4b90-9268-aa4847718744/Screenshot+2025-07-21+at+3.53.53%E2%80%AFPM.png?format=750w",
-    "instagram": "@_carolinecook_",
+    "photo": "/images/miriam-1.png",
+    "instagram": "@miriamvas_",
     "links": [
+      {
+        "title": "Instagram",
+        "url": "https://www.instagram.com/miriamvas_"
+      },
       {
         "title": "EXA Models",
         "url": "https://www.examodels.com"
@@ -18,8 +22,14 @@
   {
     "id": "donatellabarbero",
     "name": "Donatella Barbero",
-    "photo": "https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/6b492f75-7847-48c4-8de3-43498f69b3a1/donatella.jpg",
+    "photo": "/images/donatella-barbero-1.png",
     "instagram": "@donatellabarbero",
+    "gallery": [
+      "/images/donatella-barbero-2.png",
+      "/images/donatella-barbero-3.png",
+      "/images/donatella-barbero-4.png",
+      "/images/donatella-barbero-5.png"
+    ],
     "links": [
       {
         "title": "Instagram",
@@ -46,7 +56,7 @@
   {
     "id": "presleysullivan",
     "name": "Presley Sullivan",
-    "photo": "https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/59974b39-6c51-4820-8fd1-82afd87a5b65/IMG_6650.jpg",
+    "photo": "/images/presley-sullivan-1.png",
     "instagram": "@itspresplay",
     "stats": {
       "height": "5'7\"",
@@ -104,7 +114,7 @@
   {
     "id": "aleksandrabryl",
     "name": "Aleksandra Bryl",
-    "photo": "https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/0f1a56f2-78b1-4857-9ad5-9d2634197089/Screenshot+2024-10-07+at+10.40.41%E2%80%AFAM.jpg",
+    "photo": "/images/aleksandra-bryl-1.png",
     "instagram": "@aleksandrabryl5",
     "stats": {
       "height": "5'9\"",

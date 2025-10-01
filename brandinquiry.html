@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit your brand inquiry to collaborate with EXA Models">
+    <title>Brand Inquiry - EXA Models</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset styles to prevent conflicts */
+        #brand-form-container * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e);
+            min-height: 100vh;
+        }
+
+        #brand-form-container {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        #brand-form-container .header-logo {
+            max-width: 200px;
+            margin-bottom: 10px;
+            margin-top: 25px;
+            filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.7));
+            width: 100%;
+            height: auto;
+        }
+
+        #brand-form-container .form-container {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.9), rgba(0, 191, 255, 0.9), rgba(255, 105, 180, 0.9));
+            padding: 20px 30px 35px;
+            border-radius: 20px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(147, 112, 219, 0.5);
+            text-align: center;
+            margin: 20px 0 40px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Japanese-inspired cherry blossom pattern overlay */
+        #brand-form-container .form-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M50 30 C 60 20, 70 20, 80 30 C 70 40, 60 40, 50 30 C 40 40, 30 40, 20 30 C 30 20, 40 20, 50 30 Z' fill='rgba(255,182,193,0.1)'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+            opacity: 0.2;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        #brand-form-container h2 {
+            color: #ffffff;
+            margin-bottom: 25px;
+            margin-top: 0;
+            font-size: 28px;
+            font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(147, 112, 219, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        #brand-form-container .form-group {
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #brand-form-container .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #brand-form-container label {
+            display: block;
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #e6e6fa;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        #brand-form-container .required {
+            color: #ffcccb;
+        }
+
+        #brand-form-container input,
+        #brand-form-container textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid rgba(255, 182, 193, 0.5);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.95);
+            height: 48px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #brand-form-container textarea {
+            height: auto;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        #brand-form-container input:focus,
+        #brand-form-container textarea:focus {
+            outline: none;
+            border-color: #00bfff;
+            box-shadow: 0 0 12px rgba(0, 191, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        #brand-form-container input:invalid {
+            border-color: rgba(255, 99, 71, 0.7);
+        }
+
+        #brand-form-container button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff, #9400d3);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            height: 54px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        #brand-form-container button:hover:not(:disabled) {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.5);
+            background: linear-gradient(135deg, #00e6e6, #ff66ff, #ba55d3);
+        }
+
+        #brand-form-container button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #brand-form-container button::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 182, 193, 0.2) 100%);
+            transform: rotate(45deg);
+            transition: all 0.8s;
+        }
+
+        #brand-form-container button:hover:not(:disabled)::after {
+            left: 120%;
+            top: 120%;
+        }
+
+        #brand-form-container .footer-logo {
+            margin-top: 20px;
+            max-width: 80px;
+            opacity: 0.95;
+            filter: drop-shadow(0 0 5px rgba(255, 182, 193, 0.7));
+            width: 100%;
+            height: auto;
+        }
+
+        #brand-form-container .success-message {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #ff00ff;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(0, 191, 255, 0.7);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        #form-loading {
+            display: none;
+            margin: 20px 0;
+            text-align: center;
+            color: #e6e6fa;
+            z-index: 1;
+            position: relative;
+        }
+
+        #form-loading .spinner {
+            border: 4px solid rgba(255, 182, 193, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #00bfff;
+            width: 40px;
+            height: 40px;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Error message styling */
+        .error-message {
+            display: none;
+            background-color: rgba(255, 99, 71, 0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: 500;
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            #brand-form-container .form-container {
+                padding: 15px 20px 25px;
+                margin: 10px 0 20px;
+            }
+
+            #brand-form-container .form-row {
+                flex-direction: column;
+                gap: 5px;
+                margin-bottom: 5px;
+            }
+
+            #brand-form-container h2 {
+                font-size: 24px;
+            }
+
+            #brand-form-container input,
+            #brand-form-container textarea,
+            #brand-form-container button {
+                font-size: 16px;
+            }
+
+            #brand-form-container input {
+                height: 48px !important;
+                min-height: 48px !important;
+            }
+
+            #brand-form-container .header-logo {
+                max-width: 150px;
+            }
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="brand-form-container">
+        <div class="form-container">
+            <img src="/images/exa-white-logo.png" alt="EXA Models Logo" class="header-logo" loading="lazy">
+            <h2>Brand Inquiry</h2>
+
+            <div id="brandSuccessMessage" class="success-message" role="alert">
+                <strong>Thank you for your inquiry!</strong><br>
+                Your submission has been successfully received. Our team will review your information and contact you soon.
+            </div>
+
+            <div id="errorMessage" class="error-message" role="alert">
+                <strong>Error!</strong><br>
+                <span id="errorText">There was an error submitting your form. Please try again.</span>
+            </div>
+
+            <div id="form-loading" aria-live="polite">
+                <div class="spinner" aria-hidden="true"></div>
+                <p>Submitting your inquiry...</p>
+            </div>
+
+            <form id="brandInquiryForm" novalidate>
+                <div class="form-group">
+                    <label for="full_name">Full Name <span class="required" aria-label="required">*</span></label>
+                    <input type="text" id="full_name" name="full_name" required aria-required="true" autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="brand_name">Brand Name</label>
+                    <input type="text" id="brand_name" name="brand_name" autocomplete="organization">
+                </div>
+
+                <div class="form-group">
+                    <label for="website_url">Website URL</label>
+                    <input type="url" id="website_url" name="website_url" placeholder="https://www.yourbrand.com" autocomplete="url">
+                </div>
+
+                <div class="form-group">
+                    <label for="instagram">Instagram</label>
+                    <input type="text" id="instagram" name="instagram" placeholder="@yourbrand">
+                </div>
+
+                <div class="form-group">
+                    <label for="tiktok">TikTok</label>
+                    <input type="text" id="tiktok" name="tiktok" placeholder="@yourbrand">
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Where are you based? (City, State)</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., Miami, FL">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email <span class="required" aria-label="required">*</span></label>
+                    <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="years_in_business">How many Years in Business</label>
+                    <input type="number" id="years_in_business" name="years_in_business" min="0" max="100">
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget for this campaign</label>
+                    <input type="text" id="budget" name="budget" placeholder="e.g., $5,000 or TBD">
+                </div>
+
+                <div class="form-group">
+                    <label for="collaboration">How would you like to work with EXA?</label>
+                    <textarea id="collaboration" name="collaboration" rows="4" placeholder="Describe your collaboration ideas..."></textarea>
+                </div>
+
+                <button type="submit" id="submitButton">Submit Inquiry</button>
+            </form>
+            <img src="/images/swim-color-icon.png" alt="Swim Icon" class="footer-logo" loading="lazy">
+        </div>
+    </div>
+
+    <script>
+        // Form validation helper functions
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validateForm() {
+            const fullName = document.getElementById('full_name').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            if (!fullName) {
+                showError('Please enter your full name.');
+                return false;
+            }
+
+            if (!email) {
+                showError('Please enter your email address.');
+                return false;
+            }
+
+            if (!validateEmail(email)) {
+                showError('Please enter a valid email address.');
+                return false;
+            }
+
+            return true;
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            const errorText = document.getElementById('errorText');
+            errorText.textContent = message;
+            errorDiv.style.display = 'block';
+
+            // Hide after 5 seconds
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        function hideMessages() {
+            document.getElementById('errorMessage').style.display = 'none';
+            document.getElementById('brandSuccessMessage').style.display = 'none';
+        }
+
+        // Form submission handler
+        document.getElementById('brandInquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            hideMessages();
+
+            // Validate form
+            if (!validateForm()) {
+                return;
+            }
+
+            // Show loading indicator and disable submit button
+            const submitButton = document.getElementById('submitButton');
+            const loadingIndicator = document.getElementById('form-loading');
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+            loadingIndicator.style.display = 'block';
+
+            // Prepare form data
+            const formData = new FormData(this);
+
+            // Add timestamp
+            formData.append('timestamp', new Date().toISOString());
+
+            // Send data to Google Apps Script with timeout
+            const timeout = setTimeout(() => {
+                showError('Request timed out. Please check your connection and try again.');
+                resetForm();
+            }, 30000); // 30 second timeout
+
+            fetch('https://script.google.com/macros/s/AKfycbyIjl3HC0JhLkWEyMLgFfYdkOyAhTa8cYToZse63bD08PBzSzsVcF6XIUDcI_V-NGWzzQ/exec', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Required for Google Apps Script
+            })
+            .then(() => {
+                clearTimeout(timeout);
+                console.log('Form submitted successfully');
+
+                // Hide loading indicator
+                loadingIndicator.style.display = 'none';
+
+                // Show success message
+                document.getElementById('brandSuccessMessage').style.display = 'block';
+
+                // Clear form
+                document.getElementById('brandInquiryForm').reset();
+
+                // Reset button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Submit Inquiry';
+
+                // Scroll to success message
+                document.getElementById('brandSuccessMessage').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+
+                // Redirect after delay
+                setTimeout(function() {
+                    window.location.href = 'https://www.examodels.com';
+                }, 5000);
+            })
+            .catch(error => {
+                clearTimeout(timeout);
+                console.error('Error submitting form:', error);
+                showError('There was an error submitting your form. Please try again later.');
+                resetForm();
+            });
+        });
+
+        function resetForm() {
+            const submitButton = document.getElementById('submitButton');
+            const loadingIndicator = document.getElementById('form-loading');
+
+            loadingIndicator.style.display = 'none';
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit Inquiry';
+        }
+
+        // Input validation on blur
+        document.getElementById('email').addEventListener('blur', function() {
+            const email = this.value.trim();
+            if (email && !validateEmail(email)) {
+                this.style.borderColor = 'rgba(255, 99, 71, 0.7)';
+            } else {
+                this.style.borderColor = 'rgba(255, 182, 193, 0.5)';
+            }
+        });
+
+        // Auto-format phone number (optional enhancement)
+        document.getElementById('phone').addEventListener('input', function() {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length >= 6) {
+                value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+            } else if (value.length >= 3) {
+                value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
+            }
+            this.value = value;
+        });
+    </script>
+</body>
+</html>

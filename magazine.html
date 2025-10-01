@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EXA Magazine - Models x Digital Culture. Stunning visuals and exclusive digital features.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>EXA Magazine</title>
+  <style>
+    :root {
+      --neon-pink: #ff00ff;
+      --neon-cyan: #00ffff;
+      --bg-dark: rgba(0, 0, 0, 0.85);
+      --text-color: #ffffff;
+      --transition-speed: 0.3s;
+    }
+
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000, #222);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      transition: background var(--transition-speed) ease;
+    }
+
+    .magazine-container {
+      width: 100%;
+      max-width: 900px;
+      padding: 50px 30px;
+      text-align: center;
+      background: var(--bg-dark);
+      border-radius: 20px;
+      position: relative;
+      box-shadow: 0px 8px 30px rgba(255, 0, 255, 0.4);
+      overflow: hidden;
+      animation: fadeIn 1s ease-in;
+      transition: background var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    }
+
+    .glow-border {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan));
+      border-radius: 20px;
+      z-index: -1;
+      filter: blur(12px);
+      opacity: 0.7;
+      animation: glowPulse 3s infinite alternate;
+      transition: opacity var(--transition-speed) ease;
+    }
+
+    header.logo img {
+      max-width: 200px;
+      height: auto;
+      filter: drop-shadow(0px 0px 12px rgba(255,255,255,1));
+      transition: transform var(--transition-speed) ease;
+    }
+    header.logo:hover img {
+      transform: scale(1.05);
+    }
+
+    .headline {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 800;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+
+    .issue-date {
+      font-size: clamp(16px, 2.5vw, 20px);
+      font-weight: 700;
+      color: var(--neon-pink);
+      margin-top: 15px;
+      text-transform: uppercase;
+      transition: color var(--transition-speed) ease;
+    }
+    .issue-date:hover {
+      color: var(--neon-cyan);
+    }
+
+    .cta-text {
+      font-size: 16px;
+      color: var(--text-color);
+      margin: 10px 0;
+    }
+    .cta-text a {
+      color: var(--neon-pink);
+      font-weight: 700;
+      text-decoration: none;
+      position: relative;
+      transition: color var(--transition-speed) ease;
+    }
+    .cta-text a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: var(--neon-cyan);
+      transition: width var(--transition-speed) ease;
+    }
+    .cta-text a:hover::after {
+      width: 100%;
+    }
+
+    .cover-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 15px;
+      margin-top: 20px;
+      box-shadow: 0px 8px 25px rgba(255, 0, 255, 0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .cover-image:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 15px 35px rgba(255, 0, 255, 0.5);
+    }
+
+    .description {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--text-color);
+      opacity: 0.9;
+      margin-top: 20px;
+    }
+    .highlight-text {
+      font-weight: 600;
+      color: var(--neon-cyan);
+    }
+
+    .distribution h2 {
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 40px;
+      color: var(--text-color);
+    }
+    .distribution-list {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes glowPulse {
+      0% { opacity: 0.7; }
+      100% { opacity: 0.9; }
+    }
+
+    @media (max-width: 768px) {
+      .magazine-container {
+        padding: 30px 20px;
+      }
+      .distribution-list {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="magazine-container">
+    <div class="glow-border"></div>
+
+    <header class="logo">
+      <img src="/images/exa-white-logo.png" alt="EXA White Logo">
+    </header>
+
+    <h1 class="headline">EXA Magazine</h1>
+
+    <div class="issue-date">Issue May 2025 - Coming Soon</div>
+
+    <div class="cta-text">
+      <p>A Model looking to be featured in EXA Mag?
+        <a href="https://form.jotform.com/250545028516050" target="_blank" rel="noopener noreferrer">Click here 📸💫</a>
+      </p>
+      <p style="margin-top: 10px;">Brand? Email
+        <a href="mailto:mag@examodels.com">mag@examodels.com</a>
+      </p>
+    </div>
+
+    <img src="https://images.squarespace-cdn.com/content/v1/6581b7441441e630e77e0768/260baa03-2a88-40f8-bc84-bd7ee4769a4f/Screenshot+2025-02-05+at+2.36.45%E2%80%AFPM.png?format=1500w"
+         alt="EXA Magazine Cover"
+         class="cover-image">
+
+    <p style="font-size: 20px; font-weight: 600; color: var(--text-color); margin-top: 10px;">Models x Digital Culture</p>
+
+    <div class="description">
+      <p><strong>EXA MAG</strong> delivers <strong>136 pages</strong> of visually stunning digitals, spotlighting elite models from around the world.</p>
+      <p class="highlight-text">💫 Be seen. Be EXA.</p>
+    </div>
+
+    <div class="distribution">
+      <h2>Find EXA MAG in</h2>
+      <div class="distribution-list">
+        🌍 Worldwide Major Cities<br>
+        📍 Luxury Boutique Hotels<br>
+        🎨 Creative Studios<br>
+        👠 Fashion Retail
+      </div>
+    </div>
+  </div>
+</body>
+</html>
