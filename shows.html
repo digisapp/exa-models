@@ -83,8 +83,7 @@
         /* Sticky Header */
         .sticky-header {
             background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-            border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
-            box-shadow: 0 2px 10px rgba(148, 0, 211, 0.4);
+            box-shadow: 0 4px 20px rgba(148, 0, 211, 0.5);
             position: sticky;
             top: 0;
             transition: var(--transition-standard);
@@ -93,8 +92,7 @@
         }
 
         .sticky-header.scrolled {
-            padding: 5px 20px;
-            transform: scale(0.95);
+            box-shadow: 0 6px 25px rgba(148, 0, 211, 0.6);
         }
 
         .sticky-header-content {
@@ -102,115 +100,109 @@
             display: flex;
             justify-content: space-between;
             margin: 0 auto;
-            max-width: 1200px;
-            padding: 10px 20px;
+            max-width: 1400px;
+            padding: 15px 30px;
         }
 
         .sticky-logo {
-            filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.7));
-            height: 60px;
+            filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8));
+            height: 70px;
             width: auto;
-        }
-
-        /* Countdown Styling */
-        .countdown-wrapper {
-            align-items: center;
-            display: flex;
-            gap: 15px;
-        }
-
-        .swim-week-text {
-            color: var(--white);
-            font-size: clamp(16px, 2vw, 18px);
-            font-weight: bold;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-        }
-
-        .sticky-countdown {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            color: var(--white);
-            font-size: clamp(18px, 2vw, 20px);
-            font-weight: bold;
-            padding: 8px 15px;
-            text-align: center;
-        }
-
-        .sticky-cta-buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .sticky-cta-button {
-            background: var(--white);
-            border: 2px solid var(--white);
-            border-radius: 30px;
-            box-shadow: var(--box-shadow-secondary);
-            color: var(--primary-color);
-            display: inline-block;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 8px 20px;
-            text-align: center;
-            text-decoration: none;
             transition: var(--transition-standard);
         }
 
-        .sticky-cta-button:hover,
-        .sticky-cta-button:focus {
-            background: var(--primary-color);
-            border-color: var(--white);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        .sticky-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Navigation */
+        .nav-menu {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
             color: var(--white);
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px 22px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: var(--transition-standard);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            background: var(--white);
+            border-color: var(--white);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+            color: var(--primary-color);
             outline: 2px solid var(--secondary-color);
             outline-offset: 2px;
             transform: translateY(-2px) scale(1.05);
         }
 
-        .sticky-cta-button.outline {
-            background: transparent;
-            color: var(--white);
+        .nav-link.primary {
+            background: linear-gradient(135deg, var(--accent-color), var(--tertiary-color));
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
         }
 
-        .sticky-cta-button.outline:hover,
-        .sticky-cta-button.outline:focus {
-            background: var(--white);
-            color: var(--secondary-color);
+        .nav-link.primary:hover,
+        .nav-link.primary:focus {
+            background: linear-gradient(135deg, var(--tertiary-color), var(--accent-color));
+            border-color: var(--white);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+            color: var(--white);
         }
 
         /* Hero Section */
         .hero-section {
             text-align: center;
-            padding: 60px 20px 40px;
+            padding: 80px 20px 60px;
             animation: fadeIn 0.8s ease-in;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+            border-radius: var(--border-radius-large);
+            margin-bottom: 40px;
         }
 
         .hero-title {
-            font-size: clamp(42px, 6vw, 72px);
-            font-weight: 800;
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: 900;
             background: linear-gradient(135deg, var(--secondary-color), var(--accent-color), var(--tertiary-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             line-height: 1.1;
+            text-shadow: 0 0 40px rgba(255, 105, 180, 0.3);
         }
 
         .hero-date {
             font-size: clamp(24px, 3vw, 32px);
             color: var(--white);
-            font-weight: 600;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
         }
 
         .hero-location {
             font-size: clamp(18px, 2.5vw, 24px);
             color: var(--text-light);
-            margin-bottom: 35px;
-            opacity: 0.9;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 500;
         }
 
         .hero-cta {
@@ -222,18 +214,18 @@
             display: inline-block;
             font-size: clamp(20px, 2.5vw, 26px);
             font-weight: 800;
-            padding: 20px 60px;
+            padding: 18px 55px;
             text-decoration: none;
             text-transform: uppercase;
             transition: all 0.3s ease;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
+            letter-spacing: 1.5px;
+            margin-bottom: 35px;
         }
 
         .hero-cta:hover,
         .hero-cta:focus {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 0 40px rgba(255, 105, 180, 0.8), 0 12px 35px rgba(0, 0, 0, 0.4);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 0 45px rgba(255, 105, 180, 0.8), 0 12px 35px rgba(0, 0, 0, 0.4);
             outline: 3px solid var(--secondary-color);
             outline-offset: 3px;
         }
@@ -241,27 +233,33 @@
         .hero-secondary-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .hero-secondary-link {
-            color: var(--secondary-color);
-            font-size: 16px;
-            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            font-size: 15px;
+            font-weight: 700;
             text-decoration: none;
             transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 28px;
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(148, 0, 211, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .hero-secondary-link:hover,
         .hero-secondary-link:focus {
-            color: var(--accent-color);
-            background: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, var(--accent-color), var(--tertiary-color));
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
+            border-color: var(--white);
         }
 
         /* Buttons */
@@ -835,12 +833,18 @@
         @media (max-width: 992px) {
             .sticky-header-content {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
                 padding: 15px;
             }
 
-            .countdown-wrapper {
-                margin: 10px 0;
+            .nav-menu {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .nav-link {
+                font-size: 14px;
+                padding: 8px 18px;
             }
         }
 
@@ -851,21 +855,20 @@
             }
 
             .sticky-header-content {
-                padding: 8px 15px;
+                padding: 12px 15px;
             }
 
-            .swim-week-text {
-                font-size: 16px;
+            .sticky-logo {
+                height: 55px;
             }
 
-            .sticky-countdown {
-                font-size: 16px;
-                padding: 6px 10px;
+            .nav-menu {
+                gap: 8px;
             }
 
-            .sticky-cta-buttons {
-                justify-content: center;
-                width: 100%;
+            .nav-link {
+                font-size: 12px;
+                padding: 7px 14px;
             }
 
             .miami-button {
@@ -914,20 +917,33 @@
             }
 
             .hero-cta {
-                font-size: 18px;
-                padding: 16px 40px;
+                font-size: 16px;
+                padding: 14px 35px;
             }
 
             .hero-secondary-links {
                 gap: 10px;
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin: 20px auto 0;
             }
 
             .hero-secondary-link {
                 font-size: 14px;
+                padding: 10px 20px;
+                width: 100%;
+            }
+
+            .nav-menu {
+                gap: 6px;
+            }
+
+            .nav-link {
+                font-size: 11px;
                 padding: 6px 12px;
             }
 
-            .sticky-cta-button,
             .event-button,
             .contact-button,
             .view-all-videos {
@@ -978,23 +994,21 @@
         <!-- Sticky Header -->
         <header class="sticky-header" role="banner">
             <div class="sticky-header-content">
-                <img src="/images/exa-shows-logo.png"
-                     alt="NY Fashion Week Show Logo"
-                     class="sticky-logo"
-                     loading="lazy"
-                     decoding="async">
-                <div class="countdown-wrapper">
-                    <span class="swim-week-text">Art Basel Miami Show</span>
-                    <div class="sticky-countdown" id="countdown" aria-live="polite">
-                        <span id="countdown-days">00</span>D
-                        <span id="countdown-hours">00</span>H
-                        <span id="countdown-minutes">00</span>M
-                    </div>
-                </div>
-                <div class="sticky-cta-buttons">
-                    <a href="https://www.examodels.com/tickets" target="_blank" rel="noopener" class="sticky-cta-button" aria-label="Purchase tickets for NY Fashion Week Show">Tickets</a>
-                    <a href="https://www.examodels.com/swim" target="_blank" rel="noopener" class="sticky-cta-button outline" aria-label="Shop NY Fashion Week Show merchandise">Shop</a>
-                </div>
+                <a href="/">
+                    <img src="/images/exa-shows-logo.png"
+                         alt="NY Fashion Week Show Logo"
+                         class="sticky-logo"
+                         loading="lazy"
+                         decoding="async">
+                </a>
+                <nav class="nav-menu">
+                    <a href="#upcoming-shows" class="nav-link">Shows</a>
+                    <a href="#media" class="nav-link">Media</a>
+                    <a href="https://www.examodels.com/swimmodel" target="_blank" rel="noopener" class="nav-link">Apply</a>
+                    <a href="#sponsors" class="nav-link">Sponsors</a>
+                    <a href="https://www.examodels.com/swim" target="_blank" rel="noopener" class="nav-link">Shop</a>
+                    <a href="https://partiful.com/e/OCtwUV7cABiacgxYIw6H" target="_blank" rel="noopener" class="nav-link primary">Get Tickets</a>
+                </nav>
             </div>
         </header>
 
@@ -1016,55 +1030,31 @@
         </section>
 
         <!-- Upcoming Shows -->
-        <div class="upcoming-events-container">
+        <div class="upcoming-events-container" id="upcoming-shows">
             <h2 class="upcoming-events-title">Upcoming Shows</h2>
 
             <div class="upcoming-events-list" role="list">
-                <!-- New York Fashion Week -->
-                <div class="event-item" role="listitem" data-location="New York">
-                    <div class="event-details">
-                        <span class="event-date"><i class="fas fa-calendar-alt event-icon" aria-hidden="true"></i> September 10, 2025</span>
-                        <span class="event-name"><i class="fas fa-star event-icon" aria-hidden="true"></i> NY Fashion Week Show</span>
-                        <span class="event-location"><i class="fas fa-map-marker-alt event-icon" aria-hidden="true"></i> New York, NY</span>
-                    </div>
-                    <div class="event-actions">
-                        <a href="https://www.examodels.com/tickets" target="_blank" rel="noopener" class="event-button" aria-label="Get tickets for NY Fashion Week Show">Tickets</a>
-                    </div>
-                </div>
-
-                <!-- San Diego -->
-                <div class="event-item" role="listitem" data-location="San Diego">
-                    <div class="event-details">
-                        <span class="event-date"><i class="fas fa-calendar-alt event-icon" aria-hidden="true"></i> October 17, 2025</span>
-                        <span class="event-name"><i class="fas fa-tshirt event-icon" aria-hidden="true"></i> Swim Show</span>
-                        <span class="event-location"><i class="fas fa-map-marker-alt event-icon" aria-hidden="true"></i> San Diego, CA</span>
-                    </div>
-                    <div class="event-actions">
-                        <a href="https://www.examodels.com/tickets" target="_blank" rel="noopener" class="event-button" aria-label="Get tickets for San Diego Swim Show">Tickets</a>
-                    </div>
-                </div>
-
-                <!-- Scottsdale -->
-                <div class="event-item" role="listitem" data-location="Scottsdale">
-                    <div class="event-details">
-                        <span class="event-date"><i class="fas fa-calendar-alt event-icon" aria-hidden="true"></i> October 28, 2025</span>
-                        <span class="event-name"><i class="fas fa-tshirt event-icon" aria-hidden="true"></i> Swim Show</span>
-                        <span class="event-location"><i class="fas fa-map-marker-alt event-icon" aria-hidden="true"></i> Scottsdale, AZ</span>
-                    </div>
-                    <div class="event-actions">
-                        <a href="https://www.examodels.com/tickets" target="_blank" rel="noopener" class="event-button" aria-label="Get tickets for Scottsdale Swim Show">Tickets</a>
-                    </div>
-                </div>
-
                 <!-- Art Basel Miami -->
                 <div class="event-item" role="listitem" data-location="Miami">
                     <div class="event-details">
-                        <span class="event-date"><i class="fas fa-calendar-alt event-icon" aria-hidden="true"></i> December 4, 2025</span>
-                        <span class="event-name"><i class="fas fa-star event-icon" aria-hidden="true"></i> Art Basel Miami</span>
-                        <span class="event-location"><i class="fas fa-map-marker-alt event-icon" aria-hidden="true"></i> Miami, FL</span>
+                        <span class="event-date"><i class="fas fa-calendar-alt event-icon" aria-hidden="true"></i> December 3, 2025</span>
+                        <span class="event-name"><i class="fas fa-star event-icon" aria-hidden="true"></i> Art Basel Miami Show</span>
+                        <span class="event-location"><i class="fas fa-map-marker-alt event-icon" aria-hidden="true"></i> Miami Beach, FL</span>
                     </div>
                     <div class="event-actions">
-                        <a href="https://www.examodels.com/tickets" target="_blank" rel="noopener" class="event-button" aria-label="Get tickets for Art Basel Miami">Tickets</a>
+                        <a href="https://partiful.com/e/OCtwUV7cABiacgxYIw6H" target="_blank" rel="noopener" class="event-button" aria-label="Get tickets for Art Basel Miami">Tickets</a>
+                    </div>
+                </div>
+
+                <!-- Hawaii Show -->
+                <div class="event-item" role="listitem" data-location="Hawaii">
+                    <div class="event-details">
+                        <span class="event-date"><i class="fas fa-calendar-alt event-icon" aria-hidden="true"></i> February 2026 (Date TBA)</span>
+                        <span class="event-name"><i class="fas fa-umbrella-beach event-icon" aria-hidden="true"></i> Hawaii Show</span>
+                        <span class="event-location"><i class="fas fa-map-marker-alt event-icon" aria-hidden="true"></i> Honolulu, HI</span>
+                    </div>
+                    <div class="event-actions">
+                        <a href="https://www.examodels.com/tickets" target="_blank" rel="noopener" class="event-button" aria-label="Get tickets for Hawaii Show">Tickets</a>
                     </div>
                 </div>
 
@@ -1083,7 +1073,7 @@
         </div>
 
         <!-- Media Section -->
-        <div class="video-highlight-container">
+        <div class="video-highlight-container" id="media">
             <h2 class="video-highlight-title">Media</h2>
             <div class="video-highlight-grid">
                 <div class="video-card">
@@ -1145,7 +1135,7 @@
         </div>
 
         <!-- Sponsors Section -->
-        <div class="sponsors-container">
+        <div class="sponsors-container" id="sponsors">
             <h2 class="sponsors-title">Sponsors & Partners</h2>
             <div class="sponsors-grid">
                 <div class="sponsor-item">
@@ -1226,33 +1216,7 @@
     </script>
 
     <script>
-        // Countdown Timer
         document.addEventListener('DOMContentLoaded', () => {
-            const targetDate = new Date('2025-12-03T15:00:00-05:00').getTime();
-            const countdownElement = document.getElementById('countdown');
-            if (!countdownElement) return;
-
-            const updateCountdown = () => {
-                const now = new Date().getTime();
-                const timeRemaining = targetDate - now;
-
-                if (timeRemaining < 0) {
-                    clearInterval(countdownTimer);
-                    countdownElement.textContent = 'Event has started!';
-                    return;
-                }
-
-                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-
-                document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
-                document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
-            };
-
-            const countdownTimer = setInterval(updateCountdown, 60000); // Update every minute
-            updateCountdown();
 
             // Smooth Scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
