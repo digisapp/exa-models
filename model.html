@@ -57,6 +57,12 @@
             text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
             margin: 0 auto 1rem;
             font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .profile-image-container {
@@ -90,12 +96,6 @@
             margin-bottom: 0.5rem;
         }
 
-        .instagram-handle {
-            font-size: 1rem;
-            color: #FF69B4;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
 
         .buttons-container {
             display: flex;
@@ -136,14 +136,6 @@
             outline-offset: 2px;
         }
 
-        .back-button {
-            margin-top: 1.5rem;
-            background: linear-gradient(90deg, #9400D3, #4B0082);
-        }
-
-        .back-button:hover {
-            background: linear-gradient(90deg, #4B0082, #9400D3);
-        }
 
         .gallery {
             margin: 1.5rem 0;
@@ -263,7 +255,7 @@
             // Render profile
             app.innerHTML = `
                 <div class="profile-container">
-                    <div class="logo">exa</div>
+                    <a href="https://www.examodels.com" class="logo" style="text-decoration: none; color: inherit; display: block;">exa</a>
 
                     <div class="profile-image-container">
                         <img src="${model.photo}"
@@ -273,8 +265,6 @@
                     </div>
 
                     <h1 class="model-name">${model.name}</h1>
-
-                    ${model.instagram ? `<div class="instagram-handle">${model.instagram}</div>` : ''}
 
                     ${model.gallery ? `
                         <div class="gallery">
@@ -294,10 +284,6 @@
                                 ${link.title}
                             </a>
                         `).join('')}
-
-                        <a href="/" class="profile-button back-button">
-                            Back to Home
-                        </a>
                     </div>
                 </div>
             `;
