@@ -178,13 +178,90 @@
             color: var(--secondary-color);
         }
 
-        /* Logo */
-        .miami-logo {
-            filter: drop-shadow(0px 0px 12px rgba(255, 255, 255, 1));
-            height: auto;
-            margin-bottom: 0;
-            margin-top: 10px;
-            max-width: 250px;
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px 40px;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .hero-title {
+            font-size: clamp(42px, 6vw, 72px);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color), var(--tertiary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .hero-date {
+            font-size: clamp(24px, 3vw, 32px);
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+
+        .hero-location {
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: var(--text-light);
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+
+        .hero-cta {
+            background: linear-gradient(135deg, var(--accent-color), var(--tertiary-color));
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.6), 0 8px 25px rgba(0, 0, 0, 0.3);
+            color: var(--white);
+            display: inline-block;
+            font-size: clamp(20px, 2.5vw, 26px);
+            font-weight: 800;
+            padding: 20px 60px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .hero-cta:hover,
+        .hero-cta:focus {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 105, 180, 0.8), 0 12px 35px rgba(0, 0, 0, 0.4);
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 3px;
+        }
+
+        .hero-secondary-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .hero-secondary-link {
+            color: var(--secondary-color);
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-secondary-link:hover,
+        .hero-secondary-link:focus {
+            color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
 
         /* Buttons */
@@ -832,11 +909,24 @@
         }
 
         @media (max-width: 480px) {
-            .miami-logo {
-                max-width: 200px;
+            .hero-section {
+                padding: 40px 15px 30px;
             }
 
-            .miami-button,
+            .hero-cta {
+                font-size: 18px;
+                padding: 16px 40px;
+            }
+
+            .hero-secondary-links {
+                gap: 10px;
+            }
+
+            .hero-secondary-link {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+
             .sticky-cta-button,
             .event-button,
             .contact-button,
@@ -908,24 +998,22 @@
             </div>
         </header>
 
-        <!-- Logo -->
-        <img src="/images/exa-shows-logo.png"
-             alt="NY Fashion Week Show Logo"
-             class="miami-logo"
-             loading="lazy"
-             decoding="async">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">Art Basel Miami Show</h1>
+            <div class="hero-date">December 3, 2025</div>
+            <div class="hero-location">Miami Beach, Florida</div>
 
-        <!-- Buttons -->
-        <nav class="button-container" role="navigation">
-            <a href="https://www.examodels.com/swimmodel" target="_blank" rel="noopener" class="miami-button bounce" aria-label="Apply to model at NY Fashion Week Show">Model Submission</a>
-            <a href="https://www.examodels.com/swimdesigner" target="_blank" rel="noopener" class="miami-button" aria-label="Apply as a designer for NY Fashion Week Show">Designer Application</a>
-            <a href="https://www.examodels.com/swimmedia" target="_blank" rel="noopener" class="miami-button" aria-label="Request media passes for NY Fashion Week Show">Media Passes</a>
-        </nav>
+            <a href="https://partiful.com/e/OCtwUV7cABiacgxYIw6H" target="_blank" rel="noopener" class="hero-cta" aria-label="Get tickets for Art Basel Miami Show">
+                Get Tickets
+            </a>
 
-        <!-- Intro Message -->
-        <div class="intro-message">
-            <p>Experience the hottest Shows featuring the World's Top Models showcasing global Swimwear Brands.</p>
-        </div>
+            <div class="hero-secondary-links">
+                <a href="https://www.examodels.com/swimmodel" target="_blank" rel="noopener" class="hero-secondary-link" aria-label="Apply to model">Model Submission</a>
+                <a href="https://www.examodels.com/swimdesigner" target="_blank" rel="noopener" class="hero-secondary-link" aria-label="Apply as designer">Designer Application</a>
+                <a href="https://www.examodels.com/swimmedia" target="_blank" rel="noopener" class="hero-secondary-link" aria-label="Request media pass">Media Passes</a>
+            </div>
+        </section>
 
         <!-- Upcoming Shows -->
         <div class="upcoming-events-container">
